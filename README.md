@@ -50,11 +50,11 @@ Tudo roda no navegador. Nenhum dado sai do computador.
 
 ## 📥 Baixar a extensão
 
-1. Clique no link para baixar o arquivo: **[⬇️ FlightDesk.zip](https://github.com/ThiagoTasseli/flightdesk/raw/main/FlightDesk.zip)**
-   - Ou, nesta página do GitHub, clique em **`FlightDesk.zip`** na lista de arquivos e depois no botão **Download raw file** (ícone ⬇️ no canto direito).
-2. Abra a pasta **Downloads** do computador e encontre o `FlightDesk.zip`.
+1. Clique no link para baixar o arquivo: **[⬇️ flightdesk.zip](https://github.com/ThiagoTasseli/flightdesk/raw/main/flightdesk.zip)**
+   - Ou, nesta página do GitHub, clique em **`flightdesk.zip`** na lista de arquivos e depois no botão **Download raw file** (ícone ⬇️ no canto direito).
+2. Abra a pasta **Downloads** do computador e encontre o `flightdesk.zip`.
 3. Clique com o botão direito no arquivo → **Extrair tudo…** (Windows) ou **Extrair aqui** (Linux/macOS).
-4. Mova a pasta extraída **`FlightDesk`** para um local fixo (ex.: `Documentos\ARION-FlightDesk`). Dentro dela deve estar o arquivo `manifest.json`.
+4. Mova a pasta extraída **`flightdesk`** para um local fixo (ex.: `Documentos\ARION-flightdesk`). Dentro dela deve estar o arquivo `manifest.json`.
 
 > ⚠️ Não use **Code → Download ZIP** do GitHub: ele baixa o repositório inteiro (guia e imagens), não a extensão.
 
