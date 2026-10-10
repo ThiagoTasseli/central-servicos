@@ -50,7 +50,7 @@ Tudo roda no navegador. Nenhum dado sai do computador.
 
 ## 📥 Baixar a extensão
 
-1. Clique no link para baixar o arquivo: **[⬇️ FlightDesk.zip](https://github.com/ThiagoTasseli/fightdesk-arion/raw/main/FlightDesk.zip)**
+1. Clique no link para baixar o arquivo: **[⬇️ FlightDesk.zip](https://github.com/ThiagoTasseli/flightdesk/raw/main/FlightDesk.zip)**
    - Ou, nesta página do GitHub, clique em **`FlightDesk.zip`** na lista de arquivos e depois no botão **Download raw file** (ícone ⬇️ no canto direito).
 2. Abra a pasta **Downloads** do computador e encontre o `FlightDesk.zip`.
 3. Clique com o botão direito no arquivo → **Extrair tudo…** (Windows) ou **Extrair aqui** (Linux/macOS).
