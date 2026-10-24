@@ -139,15 +139,6 @@ Passo a passo com imagens, Firefox e uso de cada ferramenta: **[Guia do usuário
 Se você digita um e-mail depois de **Localizar**, a Central não muda este e-mail.
 **Preencher automaticamente** escreve o seu e-mail no formulário. A mensagem diz **E-mail mantido**.
 
-#### Atualize a lista de departamentos
-
-1. Abra o formulário do chamado no ServiceAide.
-2. Pressione `F12`. Clique em **Console**.
-3. Cole o script [`scripts/departamentos-console.js`](scripts/departamentos-console.js). Pressione `Enter`.
-4. Cole o resultado em `apps/preenchimento/departamentos.js`.
-
-> **NOTA:** Se o resultado é `0 departamentos`, abra a lista do campo Departamento. Role até o fim. Faça o passo 3 outra vez.
-
 ### Novo na versão 1.3.1
 
 **Meus alarmes (Central de Voos → Alarme)**
