@@ -3,7 +3,7 @@
 > Linguagem: ASD-STE100 (Simplified Technical English), regras adaptadas ao português.
 > Frases curtas. Uma ação por passo. Voz ativa. Um termo para cada coisa.
 
-**Versão da extensão:** 1.3.1 (teste)
+**Versão da extensão:** 1.3.2 (teste)
 **Navegadores:** Google Chrome, Microsoft Edge, Mozilla Firefox 128 ou mais recente
 
 ---
@@ -46,7 +46,7 @@
 
 ## 2. Antes de começar
 
-1. Faça o download do arquivo `central-servicos-v1.3.1-teste.zip` deste repositório.
+1. Faça o download do arquivo `central-servicos-v1.3.2-teste.zip` deste repositório.
 2. Clique com o botão direito no arquivo.
 3. Clique em **Extrair tudo**.
 4. Selecione a pasta `C:\ARION\`.
@@ -292,6 +292,22 @@ A barra de ícones fica no lado esquerdo da Central. Use os ícones para trocar 
 > **NOTA:** Depois de **Encontrado ✓**, **Preencher automaticamente** não busca o nome outra vez.
 
 > **NOTA:** Se você mudar o nome ou abrir outro chamado, a Central busca o nome outra vez.
+
+> **NOTA:** Se você digita outro e-mail no campo **E-mail**, a Central não muda este e-mail.
+> **Preencher automaticamente** escreve o seu e-mail no formulário. A mensagem diz **E-mail mantido**.
+
+### 9.2 Selecione o departamento
+
+![Sugestões de departamento](imagens/tela-chamados-departamento.png)
+
+1. Clique no campo **Departamento**.
+2. Digite parte do nome. Exemplo: `pol`.
+3. Clique no departamento na lista.
+   Também é possível pressionar a seta para baixo e `Enter`.
+
+> **NOTA:** A lista não diferencia maiúsculas, minúsculas e acentos.
+
+> **NOTA:** Se você digita um departamento que não está na lista, a Central guarda este departamento como sugestão.
 
 ---
 

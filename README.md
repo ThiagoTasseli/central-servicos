@@ -7,9 +7,9 @@ Extensão de navegador para o atendimento do Grupo ARION (uso interno).
 
 | | |
 |---|---|
-| **Versão** | 1.3.1 (teste) |
+| **Versão** | 1.3.2 (teste) |
 | **Navegadores** | Google Chrome, Microsoft Edge, Mozilla Firefox 128+ |
-| **Download** | [`central-servicos-v1.3.1-teste.zip`](central-servicos-v1.3.1-teste.zip) |
+| **Download** | [`central-servicos-v1.3.2-teste.zip`](central-servicos-v1.3.2-teste.zip) |
 | **Manual do usuário** | [GUIA-DO-USUARIO.md](GUIA-DO-USUARIO.md) (linguagem ASD-STE100) |
 
 ---
@@ -31,7 +31,7 @@ A Central junta quatro extensões antigas em uma só. Cada ferramenta tem um íc
 
 ## Instalação rápida
 
-1. Faça o download de [`central-servicos-v1.3.1-teste.zip`](central-servicos-v1.3.1-teste.zip).
+1. Faça o download de [`central-servicos-v1.3.2-teste.zip`](central-servicos-v1.3.2-teste.zip).
 2. Extraia em `C:\ARION\`.
 3. Abra `chrome://extensions` (Edge: `edge://extensions`).
 4. Ligue **Modo do desenvolvedor**.
@@ -52,6 +52,8 @@ Passo a passo com imagens, Firefox e uso de cada ferramenta: **[Guia do usuário
 - **Meus alarmes:** o botão **+** cria tarefas e lembretes (ex.: passagem de turno). Repetição: uma vez, diário ou segunda a sexta.
 - **Ir para o voo:** o link **Partida HH:MM ↗** abre o cartão do voo. Um pulso mostra o botão de colar correto.
 - **Localizar solicitante:** o botão **Localizar** procura nome e sobrenome no ServiceAide. A Central não repete a busca no preenchimento.
+- **E-mail protegido:** se você digita outro e-mail, a Central não muda o e-mail.
+- **Departamento com sugestões:** digite parte do nome. A lista mostra os departamentos do ServiceAide.
 - **Atalhos:** `Alt+Shift+A` abre; `Alt+1…5` troca de ferramenta.
 - **Visual padronizado:** mesmo cabeçalho, cores, fontes, botões e campos nas 4 ferramentas.
 
@@ -60,6 +62,32 @@ Passo a passo com imagens, Firefox e uso de cada ferramenta: **[Guia do usuário
   <img src="imagens/tela-ajuda.png" width="260" alt="Ajuda da ferramenta">
   <img src="imagens/tela-tema-claro.png" width="260" alt="Tema claro">
 </p>
+
+### Novo na versão 1.3.2
+
+**Departamento (Preenchimento de Chamados)**
+
+1. Clique no campo **Departamento**.
+2. Digite parte do nome. Exemplo: `pol`.
+3. Clique no departamento. Também é possível usar as setas e `Enter`.
+
+**Resultado:** o campo recebe o nome correto do departamento.
+
+<img src="imagens/tela-chamados-departamento.png" width="300" alt="Sugestões de departamento">
+
+**E-mail**
+
+Se você digita um e-mail depois de **Localizar**, a Central não muda este e-mail.
+**Preencher automaticamente** escreve o seu e-mail no formulário. A mensagem diz **E-mail mantido**.
+
+#### Atualize a lista de departamentos
+
+1. Abra o formulário do chamado no ServiceAide.
+2. Pressione `F12`. Clique em **Console**.
+3. Cole o script [`scripts/departamentos-console.js`](scripts/departamentos-console.js). Pressione `Enter`.
+4. Cole o resultado em `apps/preenchimento/departamentos.js`.
+
+> **NOTA:** Se o resultado é `0 departamentos`, abra a lista do campo Departamento. Role até o fim. Faça o passo 3 outra vez.
 
 ### Novo na versão 1.3.1
 
@@ -133,7 +161,8 @@ arion-central/
 
 | Versão | Mudanças |
 |---|---|
-| **1.3.1 (teste)** | Meus alarmes (tarefas e lembretes, botão +); link **Partida** com destaque no botão de colar; botão **Localizar** no Nome do Preenchimento. |
+| **1.3.2 (teste)** | E-mail digitado não é sobrescrito; Departamento com sugestões (41 opções do ServiceAide). |
+| 1.3.1 (teste) | Meus alarmes (tarefas e lembretes, botão +); link **Partida** com destaque no botão de colar; botão **Localizar** no Nome do Preenchimento. |
 | 1.3.0 (teste) | Visual padronizado; tema único; fontes locais; correções de segurança; SheetJS 0.20.3; limpeza de dados após 7 dias; aviso de versão nova. |
 | 1.2.0 | Botão para recolher a barra. |
 | 1.1.0 | Modo bandeja ou lateral fixa. |
