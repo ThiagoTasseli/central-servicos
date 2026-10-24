@@ -3,7 +3,7 @@
 > Linguagem: ASD-STE100 (Simplified Technical English), regras adaptadas ao português.
 > Frases curtas. Uma ação por passo. Voz ativa. Um termo para cada coisa.
 
-**Versão da extensão:** 1.3.2 (teste)
+**Versão da extensão:** 1.3.3 (teste)
 **Navegadores:** Google Chrome, Microsoft Edge, Mozilla Firefox 128 ou mais recente
 
 ---
@@ -17,7 +17,7 @@
 5. [Abra a Central](#5-abra-a-central)
 6. [Use a barra de ícones](#6-use-a-barra-de-ícones)
 7. [Use a Máscara de Chamado](#7-use-a-máscara-de-chamado)
-8. [Use o NOC Atacado](#8-use-o-noc-atacado)
+8. [Use o NOC](#8-use-o-noc)
 9. [Use o Preenchimento de Chamados](#9-use-o-preenchimento-de-chamados)
 10. [Use a Central de Voos](#10-use-a-central-de-voos)
 11. [Mude a forma de exibição](#11-mude-a-forma-de-exibição)
@@ -46,7 +46,7 @@
 
 ## 2. Antes de começar
 
-1. Faça o download do arquivo `central-servicos-v1.3.2-teste.zip` deste repositório.
+1. Faça o download do arquivo `central-servicos-v1.3.3-teste.zip` deste repositório.
 2. Clique com o botão direito no arquivo.
 3. Clique em **Extrair tudo**.
 4. Selecione a pasta `C:\ARION\`.
@@ -115,7 +115,7 @@
 > **ATENÇÃO:** No Firefox, a extensão temporária sai quando você fecha o navegador.
 > Faça este procedimento outra vez depois de abrir o Firefox.
 
-> **NOTA:** O Firefox pode pedir permissão para os sites OTRS, ServiceAide e Connecta.
+> **NOTA:** O Firefox pode pedir permissão para os sites OTRS e ServiceAide.
 > Abra `about:addons`, clique na Central, clique em **Permissões** e ligue os sites.
 
 ---
@@ -149,7 +149,7 @@ A barra de ícones fica no lado esquerdo da Central. Use os ícones para trocar 
 | 1 | Recolher | Diminui a barra para uma faixa fina. Clique outra vez para abrir. | Alt + 0 |
 | 2 | Guia | Abre a tela inicial. | Alt + 1 |
 | 3 | Máscara | Abre a Máscara de Chamado. | Alt + 2 |
-| 4 | NOC | Abre o NOC Atacado. | Alt + 3 |
+| 4 | NOC | Abre o NOC (Atacado e Suporte TI). | Alt + 3 |
 | 5 | Chamados | Abre o Preenchimento de Chamados. | Alt + 4 |
 | 6 | Voos | Abre a Central de Voos. | Alt + 5 |
 | 7 | Sol / Lua | Muda o tema para claro ou escuro. | — |
@@ -198,7 +198,7 @@ A barra de ícones fica no lado esquerdo da Central. Use os ícones para trocar 
 ## 7. Use a Máscara de Chamado
 
 **Objetivo:** capturar os dados do chamado e fazer a máscara para o WhatsApp.
-**Sites:** Service Aide, Connecta (Smart IT).
+**Site:** Service Aide.
 
 ![Máscara de Chamado](imagens/tela-mascara.png)
 
@@ -211,10 +211,10 @@ A barra de ícones fica no lado esquerdo da Central. Use os ícones para trocar 
 
 ### 7.2 Faça a máscara
 
-1. Abra o chamado no Service Aide ou no Connecta.
-2. Clique na aba do sistema: **Service Aide** ou **Connecta**.
+1. Abra o chamado no Service Aide.
+2. Clique na aba **Service Aide**.
 3. Selecione o grupo do WhatsApp.
-4. Selecione o técnico.
+4. Digite o nome do técnico.
 5. Clique em **Capturar**.
 6. Examine os campos. Corrija os campos com erro.
 7. Clique em **Copiar** ou em **WhatsApp**.
@@ -223,27 +223,64 @@ A barra de ícones fica no lado esquerdo da Central. Use os ícones para trocar 
 
 ---
 
-## 8. Use o NOC Atacado
+## 8. Use o NOC
 
-**Objetivo:** categorizar chamados de atacado e encaminhar para a fila NOC - ATACADO.
+**Objetivo:** categorizar chamados no OTRS e encaminhar para a fila correta.
 **Site:** OTRS (suporte.grupoarion.com.br).
 
-![NOC Atacado](imagens/tela-noc.png)
+### 8.1 Selecione o tipo de chamado
 
 1. Abra o chamado no OTRS.
 2. Clique no ícone **NOC** na barra de ícones.
 3. Se o botão **Permitir acesso ao OTRS** aparecer, clique no botão.
-4. Examine os campos Localidade, Operadora, Estado e Designação.
-5. Corrija os campos com erro.
-6. Clique em **Categorizar**.
-7. Clique em **Encaminhar para NOC - ATACADO**.
+4. Em **Tipo de chamado**, selecione **NOC Atacado** ou **Suporte TI (Engenharia)**.
+
+> **NOTA:** A Central guarda o último tipo selecionado.
+
+### 8.2 NOC Atacado
+
+![NOC Atacado](imagens/tela-noc.png)
+
+1. Examine o **Modelo da máscara**. Corrija se necessário.
+2. Se o modelo é **Não Geográficos (Urbanos)** ou **Projetos**, selecione o **Cliente**.
+3. Examine os campos Operadora, Designação e o identificador (CI, BRAD, SIGLA ou NP).
+4. Corrija os campos com erro.
+5. Clique em **Categorizar**.
+6. Clique em **Encaminhar para NOC - ATACADO**.
 
 **Resultado:** o chamado vai para a fila NOC - ATACADO.
+
+| Modelo | Identificador no fim da máscara |
+|---|---|
+| Restauração · Não Geográficos (Urbanos) | `CI:` (McDonald's: `SIGLA:`) |
+| Restauração · Bradesco | Vivo: `BRAD:` · Telmex: `CI:` |
+| Restauração · Projetos BB, CEF e Correios | `CI:` |
+| Reincidência · Bradesco | `BRAD:` |
+| Cancelamento | `NP:` (digite também o **OP**, o parceiro) |
+
+![Modelos de máscara](imagens/tela-noc-modelos.png)
+
+> **NOTA:** **Reincidência** e **Cancelamento** só fazem a máscara. Clique em **Copiar** e use a máscara no chamado.
+
+### 8.3 Suporte TI (Engenharia)
+
+![Suporte TI (Engenharia)](imagens/tela-noc-suporte.png)
+
+1. Selecione o **Motivo**: Notebook, Celular, Acessos, E-mails, Softwares ou Outras.
+2. Clique em **Categorizar**.
+3. Clique em **Encaminhar para ENG - SISTEMAS**.
+
+**Resultado:**
+- Assunto: `Grupo Arion - SOLICITAÇÃO - SUPORTE TI (Engenharia) - <Motivo>`.
+- Campos: Tipo **Solicitação**, Serviço SGF **SUPORTE TI (Engenharia)**, Sub serviço e Serviço = Motivo, SLA **Sem SLA**, Site **NGO - NAO GEOGRAFICO**, Empresa **Grupo Arion**.
+- A nota de encaminhamento vai para a equipe **Eng. Sistemas**. O chamado vai para a fila ENG - SISTEMAS.
 
 > **ATENÇÃO:** A opção **Enviar automaticamente** encaminha o chamado sem a sua revisão.
 > Ligue esta opção somente se você conhece bem o processo.
 
 > **NOTA:** Clique em **Reiniciar** para limpar o chamado atual.
+
+> **NOTA:** Nos campos de seleção, digite parte do texto. A lista mostra só as opções que combinam. Use as setas e `Enter`.
 
 ---
 
@@ -347,6 +384,15 @@ O alarme toca antes de cada evento. O alarme funciona com a Central fechada.
 - Clique no sino, no topo da ferramenta, para silenciar todos os alarmes.
 - Clique em **Partida HH:MM ↗** num alarme de voo para abrir o cartão do voo. Consulte a seção 10.5.
 
+**Mude o som do alarme**
+
+1. Clique na aba **Alarme**.
+2. Em **Som do alarme**, selecione um som. A Central toca o som durante 3 segundos.
+
+**Resultado:** todos os alarmes usam o som novo.
+
+![Som do alarme](imagens/tela-som-alarme.png)
+
 ### 10.4 Faça um alarme próprio
 
 **Objetivo:** fazer um alarme para uma tarefa de trabalho ou um lembrete. Exemplo: passagem de turno.
@@ -362,7 +408,7 @@ O alarme toca antes de cada evento. O alarme funciona com a Central fechada.
 7. Se necessário, digite uma **Observação**.
 8. Clique em **Criar alarme**.
 
-**Resultado:** o alarme aparece em **Meus alarmes**. A lista mostra os alarmes próprios e os alarmes de voo, por horário.
+**Resultado:** o alarme aparece em **Meus alarmes**. Os alarmes de voo ficam em outra lista: **Alarmes de voo**.
 
 ![Meus alarmes](imagens/tela-meus-alarmes.png)
 
@@ -371,6 +417,8 @@ O alarme toca antes de cada evento. O alarme funciona com a Central fechada.
 - Para ligar ou desligar o alarme, clique no interruptor.
 
 > **NOTA:** Um alarme **Uma vez** desliga depois de tocar. Para usar outra vez, ligue o interruptor.
+
+> **NOTA:** Um alarme adiado (**Adiar 5 min**) mostra **Agendado**.
 
 > **NOTA:** **Limpar dados** não apaga os alarmes próprios.
 

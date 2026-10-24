@@ -7,9 +7,9 @@ Extensão de navegador para o atendimento do Grupo ARION (uso interno).
 
 | | |
 |---|---|
-| **Versão** | 1.3.2 (teste) |
+| **Versão** | 1.3.3 (teste) |
 | **Navegadores** | Google Chrome, Microsoft Edge, Mozilla Firefox 128+ |
-| **Download** | [`central-servicos-v1.3.2-teste.zip`](central-servicos-v1.3.2-teste.zip) |
+| **Download** | [`central-servicos-v1.3.3-teste.zip`](central-servicos-v1.3.3-teste.zip) |
 | **Manual do usuário** | [GUIA-DO-USUARIO.md](GUIA-DO-USUARIO.md) (linguagem ASD-STE100) |
 
 ---
@@ -20,8 +20,8 @@ A Central junta quatro extensões antigas em uma só. Cada ferramenta tem um íc
 
 | Ícone | Ferramenta | Objetivo | Sites |
 |---|---|---|---|
-| 💬 | **Máscara de Chamado** | Captura o chamado e gera a máscara para o WhatsApp. | Service Aide, Connecta (Smart IT) |
-| 🖧 | **NOC Atacado** | Categoriza chamados de atacado e encaminha para a fila NOC - ATACADO. | OTRS |
+| 💬 | **Máscara de Chamado** | Captura o chamado e gera a máscara para o WhatsApp. | Service Aide |
+| 🖧 | **NOC** | Categoriza chamados de Atacado e de Suporte TI (Engenharia). Encaminha para NOC - ATACADO ou ENG - SISTEMAS. | OTRS |
 | 📋 | **Preenchimento de Chamados** | Preenche o formulário do chamado e gera o modelo de texto. | ServiceAide |
 | ✈️ | **Central de Voos** | Lê a planilha de voos, avisa Inspeção e Acompanhamento (CUPPS) e preenche os chamados. | ServiceAide |
 
@@ -31,7 +31,7 @@ A Central junta quatro extensões antigas em uma só. Cada ferramenta tem um íc
 
 ## Instalação rápida
 
-1. Faça o download de [`central-servicos-v1.3.2-teste.zip`](central-servicos-v1.3.2-teste.zip).
+1. Faça o download de [`central-servicos-v1.3.3-teste.zip`](central-servicos-v1.3.3-teste.zip).
 2. Extraia em `C:\ARION\`.
 3. Abra `chrome://extensions` (Edge: `edge://extensions`).
 4. Ligue **Modo do desenvolvedor**.
@@ -49,7 +49,10 @@ Passo a passo com imagens, Firefox e uso de cada ferramenta: **[Guia do usuário
 - **Painel lateral fixo ou bandeja**, à escolha do usuário.
 - **Tema claro e escuro** único para todas as ferramentas.
 - **Alarmes de voo** com notificação, som, adiar e silenciar — funcionam com a Central fechada.
-- **Meus alarmes:** o botão **+** cria tarefas e lembretes (ex.: passagem de turno). Repetição: uma vez, diário ou segunda a sexta.
+- **Meus alarmes:** o botão **+** cria tarefas e lembretes (ex.: passagem de turno). Repetição: uma vez, diário ou segunda a sexta. Lista separada dos alarmes de voo.
+- **10 sons de alarme** com nomes simples (ex.: Clássico, Sino, Avião decolando).
+- **NOC com tipo de chamado:** NOC Atacado ou Suporte TI (Engenharia). Máscaras de Restauração, Reincidência e Cancelamento.
+- **Campos de seleção com filtro:** digite parte do texto. A lista mostra só as opções que combinam.
 - **Ir para o voo:** o link **Partida HH:MM ↗** abre o cartão do voo. Um pulso mostra o botão de colar correto.
 - **Localizar solicitante:** o botão **Localizar** procura nome e sobrenome no ServiceAide. A Central não repete a busca no preenchimento.
 - **E-mail protegido:** se você digita outro e-mail, a Central não muda o e-mail.
@@ -62,6 +65,62 @@ Passo a passo com imagens, Firefox e uso de cada ferramenta: **[Guia do usuário
   <img src="imagens/tela-ajuda.png" width="260" alt="Ajuda da ferramenta">
   <img src="imagens/tela-tema-claro.png" width="260" alt="Tema claro">
 </p>
+
+### Novo na versão 1.3.3
+
+**Tipo de chamado (NOC)**
+
+1. Abra o chamado no OTRS.
+2. Clique no ícone **NOC**.
+3. Em **Tipo de chamado**, selecione **NOC Atacado** ou **Suporte TI (Engenharia)**.
+
+**Resultado:** a Central mostra os campos e a máscara do tipo selecionado.
+
+<p>
+  <img src="imagens/tela-noc.png" width="260" alt="NOC Atacado">
+  <img src="imagens/tela-noc-modelos.png" width="260" alt="Modelos de máscara">
+  <img src="imagens/tela-noc-suporte.png" width="260" alt="Suporte TI (Engenharia)">
+</p>
+
+**NOC Atacado — modelos de máscara**
+
+| Modelo | Exemplo de máscara | Identificador |
+|---|---|---|
+| Restauração · Não Geográficos (Urbanos) | `Não Geográficos (Urbanos) - CLARO S.A. - RESTAURAÇÃO - INTERNET - PROJETO CARREFOUR - BL300000097058 - CI: 473084` | CI (McDonald's: SIGLA) |
+| Restauração · Bradesco | `BRAD - TELEFONICA BRASIL S.A. - RESTAURAÇÃO - INTERNET - BRADESCO - BD0001222 - BRAD: 791` | BRAD (Vivo) / CI (Telmex) |
+| Restauração · Projetos BB, CEF e Correios | `Projeto BB - CLARO S.A. - RESTAURAÇÃO - INTERNET - PROJETO BB - … - CI: …` | CI |
+| Reincidência · Bradesco | `[REINCIDENCIA MONITORAMENTO] - TELMEX - BRADESCO - BD500000098988 - BRAD:2950` | BRAD |
+| Cancelamento | `NGO - TELEFONICA BRASIL S.A. - CANCELAMENTO - INTERNET - OP:AN TELECOM - BD0001246 - NP:15576` | NP |
+
+- Para **Não Geográficos (Urbanos)** e **Projetos**, selecione também o **Cliente**.
+- **Reincidência** e **Cancelamento** só fazem a máscara. Clique em **Copiar**.
+
+**Suporte TI (Engenharia)**
+
+1. Selecione o **Motivo**: Notebook, Celular, Acessos, E-mails, Softwares ou Outras.
+2. Clique em **Categorizar**.
+3. Clique em **Encaminhar para ENG - SISTEMAS**.
+
+**Resultado:** assunto `Grupo Arion - SOLICITAÇÃO - SUPORTE TI (Engenharia) - <Motivo>`. Tipo Solicitação, SLA Sem SLA, Site NGO - NAO GEOGRAFICO, Empresa Grupo Arion. A nota de encaminhamento vai para a equipe Eng. Sistemas.
+
+**Meus alarmes e Alarmes de voo (Central de Voos → Alarme)**
+
+- Os alarmes próprios ficam em **Meus alarmes**. Os alarmes de voo ficam em **Alarmes de voo**.
+- Um alarme adiado (**Adiar 5 min**) mostra **Agendado**.
+
+<img src="imagens/tela-meus-alarmes.png" width="300" alt="Meus alarmes e Alarmes de voo">
+
+**Som do alarme**
+
+1. Clique na aba **Alarme**.
+2. Em **Som do alarme**, selecione um som. A Central toca o som durante 3 segundos.
+
+<img src="imagens/tela-som-alarme.png" width="300" alt="Som do alarme">
+
+**Máscara de Chamado**
+
+- O Connecta (Smart IT) foi removido. A Máscara funciona só no Service Aide.
+- O campo **Técnico** não mostra mais a lista de nomes. Digite o nome.
 
 ### Novo na versão 1.3.2
 
@@ -145,10 +204,11 @@ arion-central/
 ├── manifest.json        Manifest V3 único (Chrome, Edge, Firefox)
 ├── background.js        Painel lateral, alarmes, limpeza de dados
 ├── hub/                 Barra de ícones, Guia, ajuda, avisos
-├── shared/              Design system: cores, tema, fontes, logo
+├── shared/              Design system: cores, tema, fontes, logo, campo de seleção com filtro
+├── sounds/              Sons dos alarmes (lista em sons.js)
 └── apps/
     ├── mascara/         Máscara de Chamado
-    ├── noc-atacado/     NOC Atacado
+    ├── noc-atacado/     NOC (Atacado e Suporte TI)
     ├── preenchimento/   Preenchimento de Chamados
     └── voos/            Central de Voos
 ```
@@ -161,7 +221,8 @@ arion-central/
 
 | Versão | Mudanças |
 |---|---|
-| **1.3.2 (teste)** | E-mail digitado não é sobrescrito; Departamento com sugestões (41 opções do ServiceAide). |
+| **1.3.3 (teste)** | NOC: tipo de chamado (Atacado ou Suporte TI), máscaras novas, cliente para Não Geográficos; Meus alarmes e Alarmes de voo separados; adiado = Agendado; 10 sons; Connecta removido; filtro nos campos de seleção. |
+| 1.3.2 (teste) | E-mail digitado não é sobrescrito; Departamento com sugestões (41 opções do ServiceAide). |
 | 1.3.1 (teste) | Meus alarmes (tarefas e lembretes, botão +); link **Partida** com destaque no botão de colar; botão **Localizar** no Nome do Preenchimento. |
 | 1.3.0 (teste) | Visual padronizado; tema único; fontes locais; correções de segurança; SheetJS 0.20.3; limpeza de dados após 7 dias; aviso de versão nova. |
 | 1.2.0 | Botão para recolher a barra. |
