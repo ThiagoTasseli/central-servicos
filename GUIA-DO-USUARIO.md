@@ -3,7 +3,7 @@
 > Linguagem: ASD-STE100 (Simplified Technical English), regras adaptadas ao português.
 > Frases curtas. Uma ação por passo. Voz ativa. Um termo para cada coisa.
 
-**Versão da extensão:** 1.3.0 (teste)
+**Versão da extensão:** 1.3.1 (teste)
 **Navegadores:** Google Chrome, Microsoft Edge, Mozilla Firefox 128 ou mais recente
 
 ---
@@ -39,12 +39,14 @@
 | **Bandeja** | Uma janela pequena que abre no ícone da extensão. |
 | **Guia** | A tela inicial da Central. Mostra o objetivo e os passos de cada ferramenta. |
 | **Clique** | Pressione o botão esquerdo do mouse uma vez. |
+| **Alarme de voo** | Alarme que a Central faz para a Inspeção ou o Acompanhamento de um voo. |
+| **Alarme próprio** | Alarme que você faz: uma tarefa ou um lembrete. |
 
 ---
 
 ## 2. Antes de começar
 
-1. Faça o download do arquivo `central-servicos-v1.3.0-teste.zip` deste repositório.
+1. Faça o download do arquivo `central-servicos-v1.3.1-teste.zip` deste repositório.
 2. Clique com o botão direito no arquivo.
 3. Clique em **Extrair tudo**.
 4. Selecione a pasta `C:\ARION\`.
@@ -254,18 +256,42 @@ A barra de ícones fica no lado esquerdo da Central. Use os ícones para trocar 
 
 1. Abra o formulário do chamado no ServiceAide.
 2. Clique no ícone **Chamados** na barra de ícones.
-3. Etapa 1: digite o **Nome** e o **Telefone** do solicitante.
-4. Etapa 2: selecione o **Equipamento** e o tipo (**Solicitação** ou **Incidente**).
-5. Etapa 2: digite a **Localização** e a **Descrição do problema**.
-6. Etapa 3: digite a **Matrícula**, o **Departamento** e a **Identificação do equipamento**.
-7. Etapa 4: clique em **Preencher automaticamente**.
-8. Examine o formulário no ServiceAide.
-9. Clique em **Salvar** no ServiceAide.
-10. Clique em **Copiar modelo**.
+3. Etapa 1: digite o **Nome** completo do solicitante.
+4. Etapa 1: clique em **Localizar**. Consulte a seção 9.1.
+5. Etapa 1: digite o **Telefone** do solicitante.
+6. Etapa 2: selecione o **Equipamento** e o tipo (**Solicitação** ou **Incidente**).
+7. Etapa 2: digite a **Localização** e a **Descrição do problema**.
+8. Etapa 3: digite a **Matrícula**, o **Departamento** e a **Identificação do equipamento**.
+9. Etapa 4: clique em **Preencher automaticamente**.
+10. Examine o formulário no ServiceAide.
+11. Clique em **Salvar** no ServiceAide.
+12. Clique em **Copiar modelo**.
 
 > **NOTA:** Os campos com * são obrigatórios. Um campo vazio fica com borda vermelha.
 
 > **NOTA:** Para adicionar um equipamento à lista, clique na engrenagem ao lado de **Equipamento**.
+
+### 9.1 Localize o solicitante
+
+**Objetivo:** encontrar o solicitante no ServiceAide antes de preencher.
+
+![Localizar solicitante](imagens/tela-chamados-localizar.png)
+
+1. Abra o formulário do chamado no ServiceAide.
+2. Digite o **Nome** completo do solicitante.
+3. Clique em **Localizar**. Também é possível pressionar `Enter`.
+
+**Resultado:**
+
+| Mensagem | Significado | Ação |
+|---|---|---|
+| **Encontrado ✓** (verde) | A Central encontrou nome e sobrenome. O nome fica no formulário. O e-mail aparece no campo **E-mail**. | Continue na etapa 1. |
+| **Não encontrado** (vermelho) | O ServiceAide não tem o primeiro nome. | Examine o nome. Clique em **Localizar** outra vez. |
+| **"Nome" encontrado, mas sobrenome não** (vermelho) | O ServiceAide tem o primeiro nome, mas não o sobrenome. | Examine o sobrenome. Clique em **Localizar** outra vez. |
+
+> **NOTA:** Depois de **Encontrado ✓**, **Preencher automaticamente** não busca o nome outra vez.
+
+> **NOTA:** Se você mudar o nome ou abrir outro chamado, a Central busca o nome outra vez.
 
 ---
 
@@ -303,8 +329,49 @@ O alarme toca antes de cada evento. O alarme funciona com a Central fechada.
 - Clique em **Adiar 5 min** para tocar outra vez em 5 minutos.
 - Clique em **Desativar** para parar o alarme deste evento.
 - Clique no sino, no topo da ferramenta, para silenciar todos os alarmes.
+- Clique em **Partida HH:MM ↗** num alarme de voo para abrir o cartão do voo. Consulte a seção 10.5.
 
-### 10.4 Preencha o chamado
+### 10.4 Faça um alarme próprio
+
+**Objetivo:** fazer um alarme para uma tarefa de trabalho ou um lembrete. Exemplo: passagem de turno.
+
+![Novo alarme](imagens/tela-alarme-novo.png)
+
+1. Clique na aba **Alarme**.
+2. Em **Meus alarmes**, clique em **+**.
+3. Selecione **Tarefa** ou **Lembrete**.
+4. Digite o **Título**.
+5. Selecione o **Horário**.
+6. Selecione **Repetir**: **Uma vez**, **Diário** ou **Seg a sex**.
+7. Se necessário, digite uma **Observação**.
+8. Clique em **Criar alarme**.
+
+**Resultado:** o alarme aparece em **Meus alarmes**. A lista mostra os alarmes próprios e os alarmes de voo, por horário.
+
+![Meus alarmes](imagens/tela-meus-alarmes.png)
+
+- Para mudar o alarme, clique em **Editar**.
+- Para apagar o alarme, clique em **Excluir**. Clique em **Confirmar exclusão**.
+- Para ligar ou desligar o alarme, clique no interruptor.
+
+> **NOTA:** Um alarme **Uma vez** desliga depois de tocar. Para usar outra vez, ligue o interruptor.
+
+> **NOTA:** **Limpar dados** não apaga os alarmes próprios.
+
+### 10.5 Vá para o voo do alarme
+
+1. Clique na aba **Alarme**.
+2. Num alarme de voo, clique em **Partida HH:MM ↗**.
+
+**Resultado:** a Central abre a aba **Voos** e mostra o cartão do voo.
+O botão para colar pulsa durante 8 segundos:
+
+- Laranja: **Colar Inspeção**.
+- Verde: **Colar Acomp.**
+
+![Botão de colar em destaque](imagens/tela-voo-destaque.png)
+
+### 10.6 Preencha o chamado
 
 1. Abra o formulário "Acompanhamento técnico de voo" no ServiceAide.
 2. No cartão do voo, clique em **Colar**.
@@ -373,6 +440,8 @@ A Central tem duas formas de exibição:
 | O NOC mostra "Nenhuma aba do OTRS". | O OTRS não está aberto. | Abra o chamado no OTRS. Clique no botão de recarregar do NOC. |
 | "Sem acesso à aba." | O navegador bloqueou o site. | Abra `chrome://extensions`, clique em **Saiba mais** na Central e permita o site. |
 | O alarme não toca. | Os alarmes estão silenciados. | Clique no sino na Central de Voos. |
+| **Localizar** mostra "ServiceAide não está aberto". | O formulário do chamado não está aberto. | Abra o formulário no ServiceAide. Clique em **Localizar** outra vez. |
+| **Partida HH:MM ↗** mostra "Voo não encontrado". | A data da consulta é diferente da data do voo. | Selecione a data do voo em **Data da consulta**. |
 | A Central mostra erro depois de atualizar. | O navegador usa a versão antiga. | Clique no ícone de recarregar em `chrome://extensions`. |
 
 ---
