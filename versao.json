@@ -1,7 +1,7 @@
 {
   "versao": "2.0.0.3",
   "nome": "2.0.0-alpha.3",
-  "download": "https://github.com/ThiagoTasseli/central-servicos/raw/alpha/arion-central-2.0.0-alpha.3.zip",
+  "download": "https://raw.githubusercontent.com/ThiagoTasseli/central-servicos/alpha/arion-central-2.0.0-alpha.3.zip",
   "pagina": "https://github.com/ThiagoTasseli/central-servicos/tree/alpha",
   "notas": "Aviso automático de versão nova."
 }
