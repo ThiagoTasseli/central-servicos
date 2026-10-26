@@ -1,7 +1,7 @@
 {
-  "versao": "2.0.0.4",
-  "nome": "2.0.0-alpha.4",
-  "download": "https://raw.githubusercontent.com/ThiagoTasseli/central-servicos/alpha/arion-central-2.0.0-alpha.4.zip",
+  "versao": "2.0.0.5",
+  "nome": "2.0.0-alpha.5",
+  "download": "https://raw.githubusercontent.com/ThiagoTasseli/central-servicos/alpha/arion-central-2.0.0-alpha.5.zip",
   "pagina": "https://github.com/ThiagoTasseli/central-servicos/tree/alpha",
-  "notas": "Localidade Não Geográficos no NOC, Máscara mais limpa e localizações sugeridas nos Chamados."
+  "notas": "Trocar tema com prévia: Claro, Escuro, Areia, Noite azul e Alto contraste."
 }
