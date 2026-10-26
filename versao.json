@@ -1,7 +1,7 @@
 {
-  "versao": "2.0.0.5",
-  "nome": "2.0.0-alpha.5",
-  "download": "https://raw.githubusercontent.com/ThiagoTasseli/central-servicos/alpha/arion-central-2.0.0-alpha.5.zip",
+  "versao": "2.0.0.6",
+  "nome": "2.0.0-alpha.6",
+  "download": "https://raw.githubusercontent.com/ThiagoTasseli/central-servicos/alpha/arion-central-2.0.0-alpha.6.zip",
   "pagina": "https://github.com/ThiagoTasseli/central-servicos/tree/alpha",
-  "notas": "Trocar tema com prévia: Claro, Escuro, Areia, Noite azul e Alto contraste."
+  "notas": "Correção: NOC no Firefox voltou a ler o OTRS."
 }
