@@ -1,7 +1,7 @@
 {
-  "versao": "2.0.0.6",
-  "nome": "2.0.0-alpha.6",
-  "download": "https://raw.githubusercontent.com/ThiagoTasseli/central-servicos/alpha/arion-central-2.0.0-alpha.6.zip",
+  "versao": "2.0.0.7",
+  "nome": "2.0.0-alpha.7",
+  "download": "https://raw.githubusercontent.com/ThiagoTasseli/central-servicos/alpha/arion-central-2.0.0-alpha.7.zip",
   "pagina": "https://github.com/ThiagoTasseli/central-servicos/tree/alpha",
-  "notas": "Correção: NOC no Firefox voltou a ler o OTRS."
+  "notas": "Correção: NOC no Firefox lê o chamado mesmo quando a leitura principal falha."
 }
