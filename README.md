@@ -1,19 +1,19 @@
 # Central de Serviços ARION — Branch `alpha` (experimental)
 
-> **Versão experimental 2.0.0-alpha.3.** Visual minimalista, mesmas funções da 1.3.3.
+> **Versão experimental 2.0.0-alpha.4.** Visual minimalista, mesmas funções da 1.3.3.
 > Instala ao lado da versão normal (é outra extensão). A versão estável continua na branch `main`.
 
 ![Telas da versão Alpha](imagens/alpha-telas.png)
 
 | | |
 |---|---|
-| **Versão** | 2.0.0-alpha.3 |
-| **Download** | [`arion-central-2.0.0-alpha.3.zip`](arion-central-2.0.0-alpha.3.zip) |
+| **Versão** | 2.0.0-alpha.4 |
+| **Download** | [`arion-central-2.0.0-alpha.4.zip`](arion-central-2.0.0-alpha.4.zip) |
 | **Arquivo de versão** | [`versao.json`](versao.json) |
 
 ### Instale
 
-1. Faça o download de `arion-central-2.0.0-alpha.3.zip`.
+1. Faça o download de `arion-central-2.0.0-alpha.4.zip`.
 2. Extraia em `C:\ARION\`.
 3. Abra `chrome://extensions`. Ligue **Modo do desenvolvedor**.
 4. Clique em **Carregar sem compactação**. Selecione `C:\ARION\arion-central-alpha`.
