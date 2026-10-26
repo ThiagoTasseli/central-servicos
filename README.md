@@ -1,3 +1,47 @@
+# Central de Serviços ARION — Branch `alpha` (experimental)
+
+> **Versão experimental 2.0.0-alpha.3.** Visual minimalista, mesmas funções da 1.3.3.
+> Instala ao lado da versão normal (é outra extensão). A versão estável continua na branch `main`.
+
+![Telas da versão Alpha](imagens/alpha-telas.png)
+
+| | |
+|---|---|
+| **Versão** | 2.0.0-alpha.3 |
+| **Download** | [`arion-central-2.0.0-alpha.3.zip`](arion-central-2.0.0-alpha.3.zip) |
+| **Arquivo de versão** | [`versao.json`](versao.json) |
+
+### Instale
+
+1. Faça o download de `arion-central-2.0.0-alpha.3.zip`.
+2. Extraia em `C:\ARION\`.
+3. Abra `chrome://extensions`. Ligue **Modo do desenvolvedor**.
+4. Clique em **Carregar sem compactação**. Selecione `C:\ARION\arion-central-alpha`.
+
+### Aviso de versão nova
+
+A Central lê o [`versao.json`](versao.json) desta branch a cada 6 horas e ao abrir o navegador.
+
+Se a versão do arquivo é maior que a instalada:
+
+- o ícone ARION mostra o selo **1**;
+- aparece uma notificação. Clique nela para baixar;
+- o Início mostra o aviso com o botão **Baixar**.
+
+Para atualizar: extraia o zip novo na mesma pasta. Clique em recarregar em `chrome://extensions`.
+
+> **NOTA:** A extensão não se troca sozinha. O Chrome não permite isso no modo "Carregar sem compactação".
+
+### Publique uma versão nova (responsável)
+
+1. Mude `version` e `version_name` no `manifest.json`.
+2. Gere o zip e envie para esta branch.
+3. Mude `versao`, `nome`, `download` e `notas` no `versao.json`. Envie.
+
+**Resultado:** em até 6 horas, todos recebem o aviso.
+
+---
+
 # Central de Serviços ARION
 
 **Uma extensão. Quatro ferramentas. Navegação por ícones.**
