@@ -1,7 +1,7 @@
 {
-  "versao": "2.0.0.8",
-  "nome": "2.0.0-alpha.8",
-  "download": "https://raw.githubusercontent.com/ThiagoTasseli/central-servicos/alpha/arion-central-2.0.0-alpha.8.zip",
+  "versao": "2.0.0.9",
+  "nome": "2.0.0-alpha.9",
+  "download": "https://raw.githubusercontent.com/ThiagoTasseli/central-servicos/alpha/arion-central-2.0.0-alpha.9.zip",
   "pagina": "https://github.com/ThiagoTasseli/central-servicos/tree/alpha",
-  "notas": "Chamados: Texto do chamado no mesmo modelo da máscara."
+  "notas": "Chamados: Copiar captura o chamado no ServiceAide e copia o texto."
 }
