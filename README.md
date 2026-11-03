@@ -1,6 +1,6 @@
 # Central de Serviços ARION — Branch `alpha` (experimental)
 
-> **Versão experimental 2.0.0-alpha.12.** Barra de vidro, nomes novos, máscara editável e Cancelar Serviços (NGO) no Categorizar.
+> **Versão experimental 2.0.0-alpha.12.** Visual novo, barra rápida de vidro e Cancelar Serviços (NGO) no Categorizar.
 > Instala ao lado da versão normal (é outra extensão). A versão estável continua na branch `main`.
 
 ![Telas da versão Alpha](imagens/alpha-telas.png)
@@ -8,20 +8,32 @@
 | | |
 |---|---|
 | **Versão** | 2.0.0-alpha.12 |
+| **Navegadores** | Google Chrome, Microsoft Edge, Mozilla Firefox 128+ |
 | **Download** | [`arion-central-2.0.0-alpha.12.zip`](arion-central-2.0.0-alpha.12.zip) |
 | **Arquivo de versão** | [`versao.json`](versao.json) |
 
-### Trocar tema
+## Ferramentas
 
-Início → ⋯ → **Trocar tema**. Passe o mouse num tema para ver a Central inteira com ele. Clique para usar.
+| Aba | Ferramenta | O que faz | Site |
+|---|---|---|---|
+| Copiar | **Copiar Chamado** | Captura o chamado e gera a máscara. A máscara é editável. | ServiceAide |
+| Categorizar | **Categorização** | Categoriza e encaminha: NOC - ATACADO, ENG - SISTEMAS ou NOC - CANCELAMENTOS NGO. | OTRS |
+| Abrir | **Abertura de Chamados** | Preenche o formulário do chamado e gera o texto do chamado. | ServiceAide |
+| Voos | **Inspeção de Voos** | Lê a planilha, toca os alarmes de Inspeção e Acompanhamento e preenche os chamados. | ServiceAide |
 
-![Temas](imagens/alpha-temas.png)
+### Barra rápida
 
-### Instale
+Pílula de vidro no rodapé: **Início | Copiar · Abrir · Voos | Categorizar**.
+
+- A aba aberta mostra o nome. As outras mostram o nome ao passar o mouse.
+- Ponto verde: ferramenta do site aberto na aba.
+- `Alt+1` a `Alt+5` troca de aba. `Alt+Shift+A` abre a Central.
+
+## Instale
 
 1. Faça o download de `arion-central-2.0.0-alpha.12.zip`.
 2. Extraia em `C:\ARION\`.
-3. Abra `chrome://extensions`. Ligue **Modo do desenvolvedor**.
+3. Abra `chrome://extensions` (Edge: `edge://extensions`). Ligue **Modo do desenvolvedor**.
 4. Clique em **Carregar sem compactação**. Selecione `C:\ARION\arion-central-alpha`.
 
 ### Firefox: libere o acesso aos sites
@@ -31,9 +43,79 @@ No Firefox, o acesso ao OTRS e ao ServiceAide não vem ligado na instalação.
 1. Abra a Central. No Início, clique em **Permitir acesso**.
 2. Clique em **Permitir** na janela do Firefox.
 
-**Resultado:** NOC, Chamados e Voos leem o OTRS e o ServiceAide.
+**Resultado:** Categorização, Abertura de Chamados e Inspeção de Voos leem o OTRS e o ServiceAide.
 
-### Aviso de versão nova
+## Como usar
+
+### Copiar Chamado
+
+1. Primeira vez: clique na engrenagem. Digite seu nome de atendente. Clique em **Salvar**.
+2. Abra o chamado no ServiceAide.
+3. Clique em **Capturar chamado**.
+4. Confira a máscara. Clique no texto para editar.
+5. Clique em **Copiar**. As edições vão junto. **Limpar** apaga a máscara.
+
+### Categorização (OTRS)
+
+1. Abra o chamado no OTRS.
+2. Escolha **Atacado** ou **Suporte TI**.
+3. Confira os dados. Clique em **Categorizar**.
+4. Clique em **Encaminhar**. Depois, clique em **Mover para a fila** e confirme.
+
+**Modelos (Atacado)**
+
+| Modelo | Exemplo de máscara |
+|---|---|
+| Restauração · Não Geográficos (Urbanos) | `Não Geográficos (Urbanos) - CLARO S.A. - RESTAURAÇÃO - INTERNET - PROJETO CARREFOUR - BL300000097058 - CI: 473084` |
+| Restauração · Bradesco | `BRAD - TELEFONICA BRASIL S.A. - RESTAURAÇÃO - INTERNET - BRADESCO - BD0001222 - BRAD: 791` |
+| Restauração · Projetos BB, CEF, Correios e FUST | `Projeto FUST - TELEFONICA BRASIL S.A. - RESTAURAÇÃO - INTERNET - PROJETO FUST - VIVO.BA.BLIVR000093 - INC10412506` |
+| Reincidência · Bradesco | `[REINCIDENCIA MONITORAMENTO] - TELMEX - BRADESCO - BD500000098988 - BRAD:2950` |
+| Cancelamento | `NGO - TELEFONICA BRASIL S.A. - CANCELAMENTO - INTERNET - OP:AN TELECOM - BD0001246 - NP:15576` |
+| **Cancelar Serviços · NGO** | `Não Geográficos (Urbanos) - LAVEZZO CORPORACOES COMERCIAIS LTDA - CANCELAMENTO - INTERNET - Pedido: 16003` |
+
+- **Reincidência** e **Cancelamento** só fazem a máscara. Clique em **Copiar**.
+- **FUST:** Localidade **Projeto FUST**. Identificador INC da Vivo.
+
+**Cancelar Serviços · NGO**
+
+Chamado do SGF com o título `Cancelar Serviços do Pedido: N` (fila ATENDIMENTO).
+
+1. A Central lê do pedido: Razão social, Nome fantasia, Telefone, CNPJ, Contato, E-mail e produtos.
+2. **POP** (GRU, GIG, BSB, CNF, VCP, FLN, MEA, VIX, POA, FOR, Congonhas, Curitiba, Cuiabá, NAT): a Central avisa e não categoriza. POP não tem este processo.
+3. Fora dos POP, **Categorizar** preenche:
+   - Localidade **Não Geográficos (Urbanos)**;
+   - Razão social, Nome fantasia e Telefone;
+   - Enviar N1 = **Sim**;
+   - Título e Assunto = a máscara;
+   - Texto: *Arion - Central de Atendimento · Este ticket foi categorizado e encaminhado para a fila Service Desk.*
+4. **Encaminhar** faz a nota (Abertura chamado ISP = **Não**) e move para **NOC - CANCELAMENTOS NGO**.
+
+> **NOTA:** o campo **Local** corrige o POP à mão. Tipo (Cancelamento) e SLA (primeira opção) ainda estão em definição.
+
+### Abertura de Chamados
+
+1. Abra o formulário do chamado no ServiceAide.
+2. **1 · Solicitante:** digite o nome e clique em **Localizar**. O Telefone é opcional.
+3. **2 · Chamado:** Solicitação ou Incidente, Equipamento, Departamento, Localização e Problema.
+4. Clique em **Preencher no ServiceAide**. Confira e salve.
+5. **Copiar** captura o chamado e copia o texto no modelo da máscara.
+
+A **engrenagem** ao lado de **Equipamento** abre a lista de equipamentos: Adicionar e remover (✕).
+
+### Inspeção de Voos
+
+1. Importe a planilha do dia (`.xlsx`, `.xls` ou `.csv`).
+2. Escolha a data. Aparecem só os voos de **Partida Internacional**.
+3. Os alarmes tocam 4 h antes (Inspeção) e 1 h antes (Acompanhamento), mesmo com a Central fechada.
+4. Com o formulário aberto no ServiceAide, clique em **Colar**.
+
+### Trocar tema
+
+Início → ⋯ → **Trocar tema**: Claro, Escuro, Areia, Noite ou Alto contraste. Passe o mouse para ver. Clique para aplicar.
+
+![Temas](imagens/alpha-temas.png)
+
+## Aviso de versão nova
 
 A Central lê o [`versao.json`](versao.json) desta branch a cada 6 horas e ao abrir o navegador.
 
@@ -47,10 +129,41 @@ Para atualizar: extraia o zip novo na mesma pasta. Clique em recarregar em `chro
 
 > **NOTA:** A extensão não se troca sozinha. O Chrome não permite isso no modo "Carregar sem compactação".
 
-### Publique uma versão nova (responsável)
+## Levar equipamentos e localizações
+
+Os dados ficam no navegador, em cada extensão. Para adicionar uma lista:
+
+1. Abra `chrome://extensions`. No card **ARION Central**, clique em **service worker**.
+2. Na aba **Console**, cole (troque as listas pelas suas):
+
+```js
+const novosEq  = ["CUPPS", "BCBP", "TOTEM"];
+const novasLoc = ["CHECK IN TAP", "PORTÃO 12"];
+chrome.storage.local.get(['equips', 'locsUsadas'], ({ equips = [], locsUsadas = [] }) => {
+  const base = equips.length ? equips : ['CUPPS', 'CUSS', 'FIDS'];
+  const unir = a => [...new Map(a.map(x => [x.trim().toUpperCase(), x.trim()])).values()];
+  chrome.storage.local.set({ equips: unir([...base, ...novosEq]), locsUsadas: unir([...locsUsadas, ...novasLoc]) }, () => console.log('Pronto'));
+});
+```
+
+3. Feche e abra a Central.
+
+Firefox: `about:debugging` → Este Firefox → ARION Central → **Inspecionar**.
+
+## Versões (alpha)
+
+| Versão | Mudanças |
+|---|---|
+| **2.0.0-alpha.12** | Cancelar Serviços · NGO no Categorizar (POP, nota e fila NOC - CANCELAMENTOS NGO); barra só de ícones. |
+| 2.0.0-alpha.11 | Barra de vidro; nomes novos; Copiar Chamado só com a máscara editável; engrenagem de Equipamento; Telefone opcional; FUST em Projetos; textos revisados. |
+| 2.0.0-alpha.10 | Firefox acha os scripts da página (caminho a partir da raiz). |
+| 2.0.0-alpha.9 | Copiar da Abertura de Chamados captura e copia. |
+| 2.0.0-alpha.8 | Texto do chamado no modelo da máscara. |
+
+## Publique uma versão nova (responsável)
 
 1. Mude `version` e `version_name` no `manifest.json`.
-2. Gere o zip e envie para esta branch.
+2. Gere o zip (com a pasta `arion-central-alpha` dentro) e envie para esta branch.
 3. Mude `versao`, `nome`, `download` e `notas` no `versao.json`. Envie.
 
 **Resultado:** em até 6 horas, todos recebem o aviso.
