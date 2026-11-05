@@ -1,15 +1,15 @@
 # Central de Serviços ARION — Branch `alpha` (experimental)
 
-> **Versão experimental 2.0.0-alpha.12.** Visual novo, barra rápida de vidro e Cancelar Serviços (NGO) no Categorizar.
+> **Versão experimental 2.0.0-alpha.13.** Visual novo, barra rápida de vidro, Cancelar Serviços (NGO) e Cadastro no CMDB no Categorizar.
 > Instala ao lado da versão normal (é outra extensão). A versão estável continua na branch `main`.
 
 ![Telas da versão Alpha](imagens/alpha-telas.png)
 
 | | |
 |---|---|
-| **Versão** | 2.0.0-alpha.12 |
+| **Versão** | 2.0.0-alpha.13 |
 | **Navegadores** | Google Chrome, Microsoft Edge, Mozilla Firefox 128+ |
-| **Download** | [`arion-central-2.0.0-alpha.12.zip`](arion-central-2.0.0-alpha.12.zip) |
+| **Download** | [`arion-central-2.0.0-alpha.13.zip`](arion-central-2.0.0-alpha.13.zip) |
 | **Arquivo de versão** | [`versao.json`](versao.json) |
 
 ## Ferramentas
@@ -17,7 +17,7 @@
 | Aba | Ferramenta | O que faz | Site |
 |---|---|---|---|
 | Copiar | **Copiar Chamado** | Captura o chamado e gera a máscara. A máscara é editável. | ServiceAide |
-| Categorizar | **Categorização** | Categoriza e encaminha: NOC - ATACADO, ENG - SISTEMAS ou NOC - CANCELAMENTOS NGO. | OTRS |
+| Categorizar | **Categorização** | Categoriza e encaminha: NOC - ATACADO, ENG - SISTEMAS, NOC - CANCELAMENTOS NGO ou NOC - ACESSOS E CADASTROS. | OTRS |
 | Abrir | **Abertura de Chamados** | Preenche o formulário do chamado e gera o texto do chamado. | ServiceAide |
 | Voos | **Inspeção de Voos** | Lê a planilha, toca os alarmes de Inspeção e Acompanhamento e preenche os chamados. | ServiceAide |
 
@@ -31,7 +31,7 @@ Pílula de vidro no rodapé: **Início | Copiar · Abrir · Voos | Categorizar**
 
 ## Instale
 
-1. Faça o download de `arion-central-2.0.0-alpha.12.zip`.
+1. Faça o download de `arion-central-2.0.0-alpha.13.zip`.
 2. Extraia em `C:\ARION\`.
 3. Abra `chrome://extensions` (Edge: `edge://extensions`). Ligue **Modo do desenvolvedor**.
 4. Clique em **Carregar sem compactação**. Selecione `C:\ARION\arion-central-alpha`.
@@ -72,6 +72,7 @@ No Firefox, o acesso ao OTRS e ao ServiceAide não vem ligado na instalação.
 | Reincidência · Bradesco | `[REINCIDENCIA MONITORAMENTO] - TELMEX - BRADESCO - BD500000098988 - BRAD:2950` |
 | Cancelamento | `NGO - TELEFONICA BRASIL S.A. - CANCELAMENTO - INTERNET - OP:AN TELECOM - BD0001246 - NP:15576` |
 | **Cancelar Serviços · NGO** | `Não Geográficos (Urbanos) - LAVEZZO CORPORACOES COMERCIAIS LTDA - CANCELAMENTO - INTERNET - Pedido: 16003` |
+| **Solicitação · Cadastro no CMDB** | `Não Geográficos (Urbanos) - NORTH TELECOM - SOLICITAÇÃO - INTERNET - CADASTRO NO CMDB` |
 
 - **Reincidência** e **Cancelamento** só fazem a máscara. Clique em **Copiar**.
 - **FUST:** Localidade **Projeto FUST**. Identificador INC da Vivo.
@@ -91,6 +92,23 @@ Chamado do SGF com o título `Cancelar Serviços do Pedido: N` (fila ATENDIMENTO
 4. **Encaminhar** faz a nota (Abertura chamado ISP = **Não**) e move para **NOC - CANCELAMENTOS NGO**.
 
 > **NOTA:** o campo **Local** corrige o POP à mão. Tipo (Cancelamento) e SLA (primeira opção) ainda estão em definição.
+
+**Solicitação · Cadastro no CMDB**
+
+Chamado com a palavra `CMDB` no título ou no corpo.
+
+1. Localidade: **Não Geográficos (Urbanos)**. Com a palavra "aeroporto": **Não Geográficos (Aeroportos)**.
+2. **Empresa:** a Central procura `Empresa:`, `Razão Social:` ou `Nome Fantasia:` no chamado. Se não achar, digite no painel.
+3. **Categorizar** preenche:
+   - Tipo **Solicitação**;
+   - Razão social e Nome fantasia com a empresa;
+   - Serviço SGF **Internet** e Serviço **Internet**;
+   - SLA **24 Horas 24x7** e Site **NGO - NAO GEOGRAFICO**;
+   - Título e Assunto = a máscara;
+   - Texto: *Arion - Central de Atendimento · Este ticket foi categorizado e encaminhado para a fila Service Desk.*
+4. **Encaminhar** faz a nota (Abertura chamado ISP = **Não**) e move para **NOC - ACESSOS E CADASTROS**.
+
+> **NOTA:** a empresa precisa existir na lista do OTRS. Se não existir, a Central avisa: Razão social não preenchida.
 
 ### Abertura de Chamados
 
@@ -154,7 +172,8 @@ Firefox: `about:debugging` → Este Firefox → ARION Central → **Inspecionar*
 
 | Versão | Mudanças |
 |---|---|
-| **2.0.0-alpha.12** | Cancelar Serviços · NGO no Categorizar (POP, nota e fila NOC - CANCELAMENTOS NGO); barra só de ícones. |
+| **2.0.0-alpha.13** | Cadastro no CMDB no Categorizar (Urbanos ou Aeroportos, nota e fila NOC - ACESSOS E CADASTROS). |
+| 2.0.0-alpha.12 | Cancelar Serviços · NGO no Categorizar (POP, nota e fila NOC - CANCELAMENTOS NGO); barra só de ícones. |
 | 2.0.0-alpha.11 | Barra de vidro; nomes novos; Copiar Chamado só com a máscara editável; engrenagem de Equipamento; Telefone opcional; FUST em Projetos; textos revisados. |
 | 2.0.0-alpha.10 | Firefox acha os scripts da página (caminho a partir da raiz). |
 | 2.0.0-alpha.9 | Copiar da Abertura de Chamados captura e copia. |
