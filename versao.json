@@ -1,7 +1,7 @@
 {
-  "versao": "2.0.0.16",
-  "nome": "2.0.0-alpha.16",
-  "download": "https://raw.githubusercontent.com/ThiagoTasseli/central-servicos/alpha/arion-central-2.0.0-alpha.16.zip",
+  "versao": "2.0.0.17",
+  "nome": "2.0.0-alpha.17",
+  "download": "https://raw.githubusercontent.com/ThiagoTasseli/central-servicos/alpha/arion-central-2.0.0-alpha.17.zip",
   "pagina": "https://github.com/ThiagoTasseli/central-servicos/tree/alpha",
-  "notas": "Comercial (teste) preenche a planilha sozinho, Tratativa de Qualidade, Confins (CNF) e Categorizar mais rápido."
+  "notas": "Comercial: copiar cada campo da planilha."
 }
