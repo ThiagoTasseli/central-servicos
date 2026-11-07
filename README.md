@@ -1,6 +1,134 @@
 # Central de Serviços ARION — Branch `alpha` (experimental)
 
-> **Versão experimental 2.0.0-alpha.17.** Visual novo, barra rápida de vidro e Categorização com Atacado, Suporte TI e **Comercial (teste)**
+> **Versão experimental 2.0.0-alpha.17.** Visual novo, barra rápida de vidro e Categorização com Atacado, Suporte TI e **Comercial (teste)**.
+> Instala ao lado da versão normal (é outra extensão). A versão estável continua na branch `main`.
+
+![Telas da versão Alpha](imagens/alpha-telas.png)
+
+| | |
+|---|---|
+| **Versão** | 2.0.0-alpha.17 |
+| **Navegadores** | Google Chrome, Microsoft Edge, Mozilla Firefox 128+ |
+| **Download** | [`arion-central-2.0.0-alpha.17.zip`](arion-central-2.0.0-alpha.17.zip) |
+| **Arquivo de versão** | [`versao.json`](versao.json) |
+
+## Ferramentas
+
+| Aba | Ferramenta | O que faz | Site |
+|---|---|---|---|
+| Copiar | **Copiar Chamado** | Captura o chamado e gera a máscara. A máscara é editável. | ServiceAide |
+| Categorizar | **Categorização** | Categoriza e encaminha: NOC - ATACADO, ENG - SISTEMAS, NOC - CANCELAMENTOS NGO ou NOC - ACESSOS E CADASTROS. | OTRS |
+| Abrir | **Abertura de Chamados** | Preenche o formulário do chamado e gera o texto do chamado. | ServiceAide |
+| Voos | **Inspeção de Voos** | Lê a planilha, toca os alarmes de Inspeção e Acompanhamento e preenche os chamados. | ServiceAide |
+
+### Barra rápida
+
+Pílula de vidro no rodapé: **Início | Copiar · Abrir · Voos | Categorizar**.
+
+- A aba aberta mostra o nome. As outras mostram o nome ao passar o mouse.
+- Ponto verde: ferramenta do site aberto na aba.
+- `Alt+1` a `Alt+5` troca de aba. `Alt+Shift+A` abre a Central.
+
+## Instale
+
+1. Faça o download de `arion-central-2.0.0-alpha.17.zip`.
+2. Extraia em `C:\ARION\`.
+3. Abra `chrome://extensions` (Edge: `edge://extensions`). Ligue **Modo do desenvolvedor**.
+4. Clique em **Carregar sem compactação**. Selecione `C:\ARION\arion-central-alpha`.
+
+### Firefox: libere o acesso aos sites
+
+No Firefox, o acesso ao OTRS e ao ServiceAide não vem ligado na instalação.
+
+1. Abra a Central. No Início, clique em **Permitir acesso**.
+2. Clique em **Permitir** na janela do Firefox.
+
+**Resultado:** Categorização, Abertura de Chamados e Inspeção de Voos leem o OTRS e o ServiceAide.
+
+## Como usar
+
+### Copiar Chamado
+
+1. Primeira vez: clique na engrenagem. Digite seu nome de atendente. Clique em **Salvar**.
+2. Abra o chamado no ServiceAide.
+3. Clique em **Capturar chamado**.
+4. Confira a máscara. Clique no texto para editar.
+5. Clique em **Copiar**. As edições vão junto. **Limpar** apaga a máscara.
+
+### Categorização (OTRS)
+
+1. Abra o chamado no OTRS.
+2. Escolha **Atacado**, **Suporte TI** ou **Comercial**.
+3. Confira os dados. Clique em **Categorizar**.
+4. Clique em **Encaminhar**. Depois, clique em **Mover para a fila** e confirme.
+
+**Modelos (Atacado)**
+
+| Modelo | Exemplo de máscara |
+|---|---|
+| Restauração · Não Geográficos (Urbanos) | `Não Geográficos (Urbanos) - CLARO S.A. - RESTAURAÇÃO - INTERNET - PROJETO CARREFOUR - BL300000097058 - CI: 473084` |
+| Restauração · Bradesco | `BRAD - TELEFONICA BRASIL S.A. - RESTAURAÇÃO - INTERNET - BRADESCO - BD0001222 - BRAD: 791` |
+| Restauração · Projetos BB, CEF, Correios e FUST | `Projeto FUST - TELEFONICA BRASIL S.A. - RESTAURAÇÃO - INTERNET - PROJETO FUST - VIVO.BA.BLIVR000093 - INC10412506` |
+| Reincidência · Bradesco | `[REINCIDENCIA MONITORAMENTO] - TELMEX - BRADESCO - BD500000098988 - BRAD:2950` |
+| Cancelamento | `NGO - TELEFONICA BRASIL S.A. - CANCELAMENTO - INTERNET - OP:AN TELECOM - BD0001246 - NP:15576` |
+| **Cancelar Serviços · NGO** | `Não Geográficos (Urbanos) - LAVEZZO CORPORACOES COMERCIAIS LTDA - CANCELAMENTO - INTERNET - Pedido: 16003` |
+| Restauração · Arcos Dourados - CNF | Igual ao Arcos Dourados. No Encaminhar, escolha **OPE - FIELD SERVICES** ou **NOC - SUPORTE AVANÇADO**. |
+| Solicitação de Tratativa de Qualidade | Título e Assunto = o título que veio. Fila **NOC - QUALIDADE ATACADO**. |
+| **Solicitação · Cadastro no CMDB** | `Não Geográficos (Urbanos) - NORTH TELECOM - SOLICITAÇÃO - INTERNET - CADASTRO NO CMDB` |
+
+- **Reincidência** e **Cancelamento** só fazem a máscara. Clique em **Copiar**.
+- **FUST:** Localidade **Projeto FUST**. Identificador INC da Vivo.
+
+**Cancelar Serviços · NGO**
+
+Chamado do SGF com o título `Cancelar Serviços do Pedido: N` (fila ATENDIMENTO).
+
+1. A Central lê do pedido: Razão social, Nome fantasia, Telefone, CNPJ, Contato, E-mail e produtos.
+2. **POP** (GRU, GIG, BSB, CNF, VCP, FLN, MEA, VIX, POA, FOR, Congonhas, Curitiba, Cuiabá, NAT): a Central avisa e não categoriza. POP não tem este processo.
+3. Fora dos POP, **Categorizar** preenche:
+   - Localidade **Não Geográficos (Urbanos)**;
+   - Razão social, Nome fantasia e Telefone;
+   - Enviar N1 = **Sim**;
+   - Título e Assunto = a máscara;
+   - Texto: *Arion - Central de Atendimento · Este ticket foi categorizado e encaminhado para a fila Service Desk.*
+4. **Encaminhar** faz a nota (Abertura chamado ISP = **Não**) e move para **NOC - CANCELAMENTOS NGO**.
+
+> **NOTA:** o campo **Local** corrige o POP à mão. Tipo (Cancelamento) e SLA (primeira opção) ainda estão em definição.
+
+**Solicitação · Cadastro no CMDB**
+
+Chamado com a palavra `CMDB` no título ou no corpo.
+
+1. Localidade: **Não Geográficos (Urbanos)**. Com a palavra "aeroporto": **Não Geográficos (Aeroportos)**.
+2. **Empresa:** a Central procura `Empresa:`, `Razão Social:` ou `Nome Fantasia:` no chamado. Se não achar, digite no painel.
+3. **Categorizar** preenche:
+   - Tipo **Solicitação**;
+   - Razão social e Nome fantasia com a empresa;
+   - Serviço SGF **Internet** e Serviço **Internet**;
+   - SLA **24 Horas 24x7** e Site **NGO - NAO GEOGRAFICO**;
+   - Título e Assunto = a máscara;
+   - Texto: *Arion - Central de Atendimento · Este ticket foi categorizado e encaminhado para a fila Service Desk.*
+4. **Encaminhar** faz a nota (Abertura chamado ISP = **Não**) e move para **NOC - ACESSOS E CADASTROS**.
+
+> **NOTA:** a empresa precisa existir na lista do OTRS. Se não existir, a Central avisa: Razão social não preenchida.
+
+**Arcos Dourados em Confins (CNF)**
+
+Chamado do Arcos Dourados com `CNF` ou `Confins`: a Central escolhe o cliente **Arcos Dourados - CNF** (cliente POP).
+
+1. Categorizar: igual ao Arcos Dourados.
+2. Escolha a **Fila do Encaminhar**: OPE - FIELD SERVICES ou NOC - SUPORTE AVANÇADO.
+3. Encaminhar: nota com a fila escolhida e move para ela.
+
+**Solicitação de Tratativa de Qualidade**
+
+Título `SOLICITAÇÃO DE TRATATIVA DE QUALIDADE | OQ-… | TQ-… | Cliente | Operadora | Designação`.
+
+1. A Central lê cliente, operadora e designação do título e categoriza normalmente.
+2. Título e Assunto ficam com o título que veio.
+3. Encaminhar: nota e fila **NOC - QUALIDADE ATACADO**.
+
+**Comercial (teste)**
 
 1. Abra o chamado no OTRS. Clique em **Capturar chamado**.
    - Chamado: número do ticket.
