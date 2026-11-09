@@ -1,7 +1,7 @@
 {
-  "versao": "2.0.0.17",
-  "nome": "2.0.0-alpha.17",
-  "download": "https://raw.githubusercontent.com/ThiagoTasseli/central-servicos/alpha/arion-central-2.0.0-alpha.17.zip",
+  "versao": "2.0.0.22",
+  "nome": "2.0.0-alpha.22",
+  "download": "https://raw.githubusercontent.com/ThiagoTasseli/central-servicos/alpha/arion-central-2.0.0-alpha.22.zip",
   "pagina": "https://github.com/ThiagoTasseli/central-servicos/tree/alpha",
-  "notas": "Comercial: copiar cada campo da planilha."
+  "notas": "Painel NOC: filas na TV, passagem de turno e Tela de avisos (Canva). Encaminhar para qualquer fila."
 }

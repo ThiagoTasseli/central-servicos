@@ -1,15 +1,15 @@
 # Central de Serviços ARION — Branch `alpha` (experimental)
 
-> **Versão experimental 2.0.0-alpha.17.** Visual novo, barra rápida de vidro e Categorização com Atacado, Suporte TI e **Comercial (teste)**.
+> **Versão experimental 2.0.0-alpha.22.** Visual novo, barra rápida de vidro, Categorização com Atacado, Suporte TI, Comercial (teste) e **Encaminhar**, e o novo **Painel NOC** (filas na TV, passagem de turno e Tela de avisos do Canva).
 > Instala ao lado da versão normal (é outra extensão). A versão estável continua na branch `main`.
 
 ![Telas da versão Alpha](imagens/alpha-telas.png)
 
 | | |
 |---|---|
-| **Versão** | 2.0.0-alpha.17 |
+| **Versão** | 2.0.0-alpha.22 |
 | **Navegadores** | Google Chrome, Microsoft Edge, Mozilla Firefox 128+ |
-| **Download** | [`arion-central-2.0.0-alpha.17.zip`](arion-central-2.0.0-alpha.17.zip) |
+| **Download** | [`arion-central-2.0.0-alpha.22.zip`](arion-central-2.0.0-alpha.22.zip) |
 | **Arquivo de versão** | [`versao.json`](versao.json) |
 
 ## Ferramentas
@@ -17,13 +17,14 @@
 | Aba | Ferramenta | O que faz | Site |
 |---|---|---|---|
 | Copiar | **Copiar Chamado** | Captura o chamado e gera a máscara. A máscara é editável. | ServiceAide |
-| Categorizar | **Categorização** | Categoriza e encaminha: NOC - ATACADO, ENG - SISTEMAS, NOC - CANCELAMENTOS NGO ou NOC - ACESSOS E CADASTROS. | OTRS |
+| Categorizar | **Categorização** | Categoriza e encaminha: NOC - ATACADO, ENG - SISTEMAS, NOC - CANCELAMENTOS NGO ou NOC - ACESSOS E CADASTROS. Aba **Encaminhar**: qualquer fila. | OTRS |
 | Abrir | **Abertura de Chamados** | Preenche o formulário do chamado e gera o texto do chamado. | ServiceAide |
 | Voos | **Inspeção de Voos** | Lê a planilha, toca os alarmes de Inspeção e Acompanhamento e preenche os chamados. | ServiceAide |
+| Painel | **Painel NOC** | Pool e Central de Serviços na TV, passagem de turno para o WhatsApp e Tela de avisos (Canva). | OTRS · Canva |
 
 ### Barra rápida
 
-Pílula de vidro no rodapé: **Início | Copiar · Abrir · Voos | Categorizar**.
+Pílula de vidro no rodapé: **Início | Copiar · Abrir · Voos | Categorizar · Painel**.
 
 - A aba aberta mostra o nome. As outras mostram o nome ao passar o mouse.
 - Ponto verde: ferramenta do site aberto na aba.
@@ -31,7 +32,7 @@ Pílula de vidro no rodapé: **Início | Copiar · Abrir · Voos | Categorizar**
 
 ## Instale
 
-1. Faça o download de `arion-central-2.0.0-alpha.17.zip`.
+1. Faça o download de `arion-central-2.0.0-alpha.22.zip`.
 2. Extraia em `C:\ARION\`.
 3. Abra `chrome://extensions` (Edge: `edge://extensions`). Ligue **Modo do desenvolvedor**.
 4. Clique em **Carregar sem compactação**. Selecione `C:\ARION\arion-central-alpha`.
@@ -49,7 +50,7 @@ No Firefox, o acesso ao OTRS e ao ServiceAide não vem ligado na instalação.
 
 ### Copiar Chamado
 
-1. Primeira vez: clique na engrenagem. Digite seu nome de atendente. Clique em **Salvar**.
+1. Primeira vez: clique na engrenagem (abre uma janela). Digite seu nome de atendente. Clique em **Salvar**.
 2. Abra o chamado no ServiceAide.
 3. Clique em **Capturar chamado**.
 4. Confira a máscara. Clique no texto para editar.
@@ -114,7 +115,7 @@ Chamado com a palavra `CMDB` no título ou no corpo.
 
 **Arcos Dourados em Confins (CNF)**
 
-Chamado do Arcos Dourados com `CNF` ou `Confins`: a Central escolhe o cliente **Arcos Dourados - CNF** (cliente POP).
+A Central escolhe sempre **Arcos Dourados**. Se o chamado for de Confins, troque o cliente para **Arcos Dourados - CNF** (cliente POP).
 
 1. Categorizar: igual ao Arcos Dourados.
 2. Escolha a **Fila do Encaminhar**: OPE - FIELD SERVICES ou NOC - SUPORTE AVANÇADO.
@@ -127,6 +128,14 @@ Título `SOLICITAÇÃO DE TRATATIVA DE QUALIDADE | OQ-… | TQ-… | Cliente | O
 1. A Central lê cliente, operadora e designação do título e categoriza normalmente.
 2. Título e Assunto ficam com o título que veio.
 3. Encaminhar: nota e fila **NOC - QUALIDADE ATACADO**.
+
+**Encaminhar (qualquer fila)**
+
+1. Abra o chamado no OTRS (tela de detalhes). Clique na aba **Encaminhar**.
+2. Em **Fila**, digite parte do nome e escolha (as 38 filas do OTRS; hífen e travessão contam como iguais). **Atualizar filas** lê a lista de novo no chamado.
+3. Confira a **Nota de encaminhamento** (editável).
+4. Clique em **Encaminhar** e confirme: a Central envia a nota.
+5. Clique em **Mover para …** e confirme: o chamado vai para a fila. Não tem desfazer.
 
 **Comercial (teste)**
 
@@ -159,9 +168,41 @@ A **engrenagem** ao lado de **Equipamento** abre a lista de equipamentos: Adicio
 3. Os alarmes tocam 4 h antes (Inspeção) e 1 h antes (Acompanhamento), mesmo com a Central fechada.
 4. Com o formulário aberto no ServiceAide, clique em **Colar**.
 
+### Painel NOC
+
+**Na TV (só no PC da TV)**
+
+1. Entre no OTRS nesse Chrome.
+2. Central → **Painel** → **Abrir na TV**. A Central abre o Painel das Filas do OTRS numa aba fixada e recarrega a cada 30 s.
+3. Aperte **F** para tela cheia. **T** troca o tema (escuro/claro). **C** abre os controles (intervalo, linha de tendência).
+
+- Cada caixa mostra o nome da fila, o número e a linha das últimas 2 horas.
+- Chamado novo no Pool: caixa em laranja com "chegou HH:MM" (10 min), sem som.
+- OTRS parado ou deslogado: faixa vermelha "OTRS sem atualizar desde HH:MM".
+
+![Painel NOC](imagens/painel-noc-tv.png)
+
+**Passagem de turno**
+
+1. Escolha o analista (**Analistas** cadastra e remove, numa janela).
+2. **Ler agora** traz os números das 16 localidades.
+3. Adicione os chamados (Ticket# e título). Marque **Continuidade** e **Crítico** e escreva o status.
+4. **Copiar para o WhatsApp.** Os chamados ficam para a próxima passagem. Remova os fechados no ✕.
+
+**Tela de avisos (Canva) — TV do meio**
+
+1. Central → **Painel** → **Tela de avisos (Canva)**. Abre numa janela: leve para a TV do meio e aperte **F**.
+2. Aperte **C** e cole o link de incorporação do Canva (Compartilhar → Mais → Incorporar). O design precisa estar com "qualquer pessoa com o link pode ver".
+3. Escolha o **tempo por slide** (10, 20, 30 ou 60 s) e quando **recarregar** (a cada volta, 5, 15 ou 30 min).
+
+- A Central passa os slides sozinha e lê o total de slides do próprio Canva. Slide oculto no Canva fica de fora.
+- O próximo slide carrega por trás e entra com fade: sem tela branca.
+- Faixa no rodapé com o Pool e a Central (pode ocultar). Setas ← → trocam o slide.
+- A Central só lê o Canva. Não altera nada no design.
+
 ### Trocar tema
 
-Início → ⋯ → **Trocar tema**: Claro, Escuro, Areia, Noite ou Alto contraste. Passe o mouse para ver. Clique para aplicar.
+Início → ⋯ → **Trocar tema** (último item do menu): Claro, Escuro, Areia, Noite ou Alto contraste. Passe o mouse para ver. Clique para aplicar.
 
 ![Temas](imagens/alpha-temas.png)
 
@@ -204,7 +245,12 @@ Firefox: `about:debugging` → Este Firefox → ARION Central → **Inspecionar*
 
 | Versão | Mudanças |
 |---|---|
-| **2.0.0-alpha.17** | Comercial: copiar cada campo da planilha; Data e Hora no Abrir chamado; Localidade por digitação; botão fixo. |
+| **2.0.0-alpha.22** | Painel NOC: nome das filas em destaque na TV. |
+| 2.0.0-alpha.21 | Tela de avisos sem tela branca entre os slides (próximo slide carrega por trás). |
+| 2.0.0-alpha.20 | Canva passa os slides sozinho (tempo por slide, a cada volta); 38 filas no Encaminhar; Arcos Dourados sem "- CNF" automático. |
+| 2.0.0-alpha.19 | Aba Encaminhar (qualquer fila); Tela de avisos (Canva); cadastros e configurações em janela; Trocar tema no fim do menu. |
+| 2.0.0-alpha.18 | Painel NOC: filas na TV (tema escuro/claro) e passagem de turno para o WhatsApp. |
+| 2.0.0-alpha.17 | Comercial: copiar cada campo da planilha; Data e Hora no Abrir chamado; Localidade por digitação; botão fixo. |
 | 2.0.0-alpha.16 | Comercial preenche a planilha sozinho, na ordem, na 1ª linha vazia. |
 | 2.0.0-alpha.15 | Comercial (teste) e Tratativa de Qualidade. |
 | 2.0.0-alpha.14 | Categorizar mais rápido, Arcos Dourados - CNF, correções do CMDB e do .csv dos Voos. |
