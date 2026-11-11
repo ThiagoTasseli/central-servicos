@@ -12,6 +12,21 @@
 | **Download** | [`arion-central-2.0.0-alpha.23.zip`](arion-central-2.0.0-alpha.23.zip) |
 | **Arquivo de versão** | [`versao.json`](versao.json) |
 
+## Manuais (passo a passo)
+
+Um manual para cada tela, em linguagem ASD-STE100: [`manuais/`](manuais/00-LEIA-PRIMEIRO.md).
+
+| Tela | Manual |
+|---|---|
+| Início, barra rápida e menu ⋯ | [01-inicio.md](manuais/01-inicio.md) |
+| Copiar Chamado | [02-copiar-chamado.md](manuais/02-copiar-chamado.md) |
+| Categorização | [03-categorizacao.md](manuais/03-categorizacao.md) |
+| Abertura de Chamados | [04-abertura-de-chamados.md](manuais/04-abertura-de-chamados.md) |
+| Inspeção de Voos | [05-inspecao-de-voos.md](manuais/05-inspecao-de-voos.md) |
+| Painel NOC | [06-painel-noc.md](manuais/06-painel-noc.md) |
+| Tela de avisos (Canva) | [07-tela-de-avisos.md](manuais/07-tela-de-avisos.md) |
+| Passagem de turno | [08-passagem-de-turno.md](manuais/08-passagem-de-turno.md) |
+
 ## Ferramentas
 
 | Aba | Ferramenta | O que faz | Site |
