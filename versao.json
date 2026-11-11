@@ -1,7 +1,7 @@
 {
-  "versao": "2.0.0.23",
-  "nome": "2.0.0-alpha.23",
-  "download": "https://raw.githubusercontent.com/ThiagoTasseli/central-servicos/main/arion-central-2.0.0-alpha.23.zip",
+  "versao": "2.0.0.24",
+  "nome": "2.0.0-alpha.24",
+  "download": "https://raw.githubusercontent.com/ThiagoTasseli/central-servicos/main/arion-central-2.0.0-alpha.24.zip",
   "pagina": "https://github.com/ThiagoTasseli/central-servicos",
-  "notas": "Painel NOC e Passagem de turno no menu ⋯; máscara do Projeto Algar."
+  "notas": "Categorização: lupa do Histórico (chamados antigos, links de internet e operadoras). Só leitura."
 }

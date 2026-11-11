@@ -3,7 +3,7 @@
 > Linguagem: ASD-STE100 (Simplified Technical English), regras adaptadas ao português.
 > Frases curtas. Uma ação por passo. Voz ativa. Um termo para cada coisa.
 
-**Versão da extensão:** 2.0.0-alpha.23
+**Versão da extensão:** 2.0.0-alpha.24
 **Navegadores:** Google Chrome, Microsoft Edge, Mozilla Firefox 128 ou mais recente
 
 ## Um manual para cada tela
@@ -12,7 +12,7 @@
 |---|---|
 | [01-inicio.md](01-inicio.md) | Início, barra rápida e menu ⋯ |
 | [02-copiar-chamado.md](02-copiar-chamado.md) | Copiar Chamado |
-| [03-categorizacao.md](03-categorizacao.md) | Categorização (Atacado, Suporte TI, Comercial, Encaminhar) |
+| [03-categorizacao.md](03-categorizacao.md) | Categorização (Atacado, Suporte TI, Comercial, Encaminhar, Histórico) |
 | [04-abertura-de-chamados.md](04-abertura-de-chamados.md) | Abertura de Chamados |
 | [05-inspecao-de-voos.md](05-inspecao-de-voos.md) | Inspeção de Voos |
 | [06-painel-noc.md](06-painel-noc.md) | Painel NOC e a tela da TV |

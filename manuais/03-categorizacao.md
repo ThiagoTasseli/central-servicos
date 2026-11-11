@@ -13,6 +13,7 @@ A tela tem 4 abas no topo:
 | **Suporte TI** | Chamados internos de TI. Fila ENG - SISTEMAS. |
 | **Comercial** | Abre um chamado novo a partir de outro e preenche a planilha CSTI. |
 | **Encaminhar** | Encaminha o chamado para qualquer fila. |
+| **Lupa (Histórico)** | Consulta chamados antigos, links de internet e operadoras. Só leitura. |
 
 ## 1. Antes de começar
 
@@ -208,3 +209,39 @@ A Central lê o título e o corpo do chamado. Ela preenche: **Modelo**, cliente,
 **Resultado:** o chamado vai para a fila.
 
 > **ATENÇÃO:** o Mover não tem desfazer. Confira a fila antes de confirmar.
+
+---
+
+## 6. Histórico (lupa)
+
+**Objetivo:** consultar e copiar dados do OTRS para preencher o chamado. Só leitura.
+
+1. Clique na lupa no topo da Categorização (ao lado do ↻).
+
+**Resultado:** a busca do Histórico abre no lugar das abas.
+
+2. Em **Buscar**, digite a designação, o número do chamado, a operadora ou uma palavra.
+3. Em **Onde**, escolha:
+   - **Chamados antigos**;
+   - **Link de internet**;
+   - **Operadora**.
+4. Pressione **Enter**.
+   Ou clique em **Buscar**.
+
+**Resultado:** os resultados aparecem em cartões.
+
+![Histórico: link de internet](../imagens/manuais/03-categorizacao-historico.png)
+
+5. Para copiar um valor, clique no ícone de copiar ao lado do campo.
+
+**Resultado:** o valor vai para a área de transferência. Aparece **Copiado**.
+
+6. Para ir à operadora do link, clique em **Operadora: …**.
+7. Para ver os chamados da designação, clique em **Chamados desta designação**.
+8. Para fechar, clique em **Fechar** ou pressione **Esc**.
+
+> **NOTA:** chamados: primeiro 30 dias, depois 12 meses. **Histórico completo** busca sem limite de data (cerca de 15 s).
+
+> **NOTA:** a Central guarda as buscas no navegador: chamados por 30 min, links e operadoras por 24 h. **Limpar cache** apaga.
+
+> **ATENÇÃO:** senha e PPPoE nunca aparecem e nunca são salvos.

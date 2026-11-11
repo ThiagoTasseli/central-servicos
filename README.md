@@ -1,15 +1,15 @@
 # Central de Serviços ARION
 
-> **Versão 2.0.0-alpha.23.** Extensão do atendimento ARION: Copiar Chamado, Categorização (OTRS), Abertura de Chamados, Inspeção de Voos, Painel NOC e Passagem de turno.
+> **Versão 2.0.0-alpha.24.** Extensão do atendimento ARION: Copiar Chamado, Categorização (OTRS), Abertura de Chamados, Inspeção de Voos, Painel NOC e Passagem de turno.
 > Substitui a versão 1.3.3. Ainda é **alpha**: teste e relate problemas pelo menu ⋯ → **Relatar problema**.
 
 ![Telas da Central](imagens/alpha-telas.png)
 
 | | |
 |---|---|
-| **Versão** | 2.0.0-alpha.23 |
+| **Versão** | 2.0.0-alpha.24 |
 | **Navegadores** | Google Chrome, Microsoft Edge, Mozilla Firefox 128+ |
-| **Download** | [`arion-central-2.0.0-alpha.23.zip`](arion-central-2.0.0-alpha.23.zip) |
+| **Download** | [`arion-central-2.0.0-alpha.24.zip`](arion-central-2.0.0-alpha.24.zip) |
 | **Arquivo de versão** | [`versao.json`](versao.json) |
 
 ## Manuais (passo a passo)
@@ -56,7 +56,7 @@ Pílula de vidro no rodapé: **Início | Copiar · Abrir · Voos | Categorizar**
 
 > **Quem usa a 1.3.3:** a 2.0 é outra extensão. Instale a 2.0, confira e depois remova a 1.3.3. Os cadastros da 1.3.3 não passam para a 2.0 (veja [Levar equipamentos e localizações](#levar-equipamentos-e-localizações)).
 
-1. Faça o download de `arion-central-2.0.0-alpha.23.zip`.
+1. Faça o download de `arion-central-2.0.0-alpha.24.zip`.
 2. Extraia em `C:\ARION\`.
 3. Abra `chrome://extensions` (Edge: `edge://extensions`). Ligue **Modo do desenvolvedor**.
 4. Clique em **Carregar sem compactação**. Selecione `C:\ARION\arion-central-alpha`.
@@ -157,6 +157,18 @@ Título `SOLICITAÇÃO DE TRATATIVA DE QUALIDADE | OQ-… | TQ-… | Cliente | O
 1. A Central lê cliente, operadora e designação do título e categoriza normalmente.
 2. Título e Assunto ficam com o título que veio.
 3. Encaminhar: nota e fila **NOC - QUALIDADE ATACADO**.
+
+**Histórico (lupa)**
+
+> 📘 **Passo a passo com prints:** [03 · Categorização › Histórico](manuais/03-categorizacao.md#6-hist%C3%B3rico-lupa)
+
+1. Clique na lupa no topo da Categorização (ao lado do ↻).
+2. Digite a designação, o nº do chamado, a operadora ou uma palavra.
+3. Em **Onde**, escolha **Chamados antigos**, **Link de internet** ou **Operadora**. Tecle **Enter**.
+4. Clique no ícone de copiar ao lado do campo.
+
+- Só leitura. Chamados: 30 dias, depois 12 meses; **Histórico completo** sob demanda (~15 s).
+- Cache local: chamados 30 min, links e operadoras 24 h. **Limpar cache** apaga. Senha e PPPoE nunca aparecem.
 
 **Encaminhar (qualquer fila)**
 
@@ -293,7 +305,8 @@ Firefox: `about:debugging` → Este Firefox → ARION Central → **Inspecionar*
 
 | Versão | Mudanças |
 |---|---|
-| **2.0.0-alpha.23** | Painel NOC e Passagem de turno separados, no menu ⋯; máscara do Projeto Algar; aviso de versão lê a branch `main`. |
+| **2.0.0-alpha.24** | Categorização: lupa do **Histórico** (chamados antigos, links de internet e operadoras; só leitura). |
+| 2.0.0-alpha.23 | Painel NOC e Passagem de turno separados, no menu ⋯; máscara do Projeto Algar; aviso de versão lê a branch `main`. |
 | 2.0.0-alpha.22 | Painel NOC: nome das filas em destaque na TV. |
 | 2.0.0-alpha.21 | Tela de avisos sem tela branca entre os slides (próximo slide carrega por trás). |
 | 2.0.0-alpha.20 | Canva passa os slides sozinho (tempo por slide, a cada volta); 38 filas no Encaminhar; Arcos Dourados sem "- CNF" automático. |
