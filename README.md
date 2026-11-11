@@ -1,15 +1,15 @@
-# Central de Serviços ARION — Branch `alpha` (experimental)
+# Central de Serviços ARION
 
-> **Versão experimental 2.0.0-alpha.22.** Visual novo, barra rápida de vidro, Categorização com Atacado, Suporte TI, Comercial (teste) e **Encaminhar**, e o novo **Painel NOC** (filas na TV, passagem de turno e Tela de avisos do Canva).
-> Instala ao lado da versão normal (é outra extensão). A versão estável continua na branch `main`.
+> **Versão 2.0.0-alpha.23.** Extensão do atendimento ARION: Copiar Chamado, Categorização (OTRS), Abertura de Chamados, Inspeção de Voos, Painel NOC e Passagem de turno.
+> Substitui a versão 1.3.3. Ainda é **alpha**: teste e relate problemas pelo menu ⋯ → **Relatar problema**.
 
-![Telas da versão Alpha](imagens/alpha-telas.png)
+![Telas da Central](imagens/alpha-telas.png)
 
 | | |
 |---|---|
-| **Versão** | 2.0.0-alpha.22 |
+| **Versão** | 2.0.0-alpha.23 |
 | **Navegadores** | Google Chrome, Microsoft Edge, Mozilla Firefox 128+ |
-| **Download** | [`arion-central-2.0.0-alpha.22.zip`](arion-central-2.0.0-alpha.22.zip) |
+| **Download** | [`arion-central-2.0.0-alpha.23.zip`](arion-central-2.0.0-alpha.23.zip) |
 | **Arquivo de versão** | [`versao.json`](versao.json) |
 
 ## Ferramentas
@@ -20,19 +20,26 @@
 | Categorizar | **Categorização** | Categoriza e encaminha: NOC - ATACADO, ENG - SISTEMAS, NOC - CANCELAMENTOS NGO ou NOC - ACESSOS E CADASTROS. Aba **Encaminhar**: qualquer fila. | OTRS |
 | Abrir | **Abertura de Chamados** | Preenche o formulário do chamado e gera o texto do chamado. | ServiceAide |
 | Voos | **Inspeção de Voos** | Lê a planilha, toca os alarmes de Inspeção e Acompanhamento e preenche os chamados. | ServiceAide |
-| Painel | **Painel NOC** | Pool e Central de Serviços na TV, passagem de turno para o WhatsApp e Tela de avisos (Canva). | OTRS · Canva |
+| ⋯ | **Painel NOC** | Pool e Central de Serviços na TV e Tela de avisos (Canva) na TV do meio. | OTRS · Canva |
+| ⋯ | **Passagem de turno** | Texto da passagem de turno para o WhatsApp. | OTRS |
 
 ### Barra rápida
 
-Pílula de vidro no rodapé: **Início | Copiar · Abrir · Voos | Categorizar · Painel**.
+Pílula de vidro no rodapé: **Início | Copiar · Abrir · Voos | Categorizar**.
 
 - A aba aberta mostra o nome. As outras mostram o nome ao passar o mouse.
 - Ponto verde: ferramenta do site aberto na aba.
 - `Alt+1` a `Alt+5` troca de aba. `Alt+Shift+A` abre a Central.
 
+### Menu ⋯ (Início)
+
+**Painel NOC**, **Passagem de turno**, Como usar, Relatar problema, Verificar atualização, Limpar dados antigos e **Trocar tema** (último item).
+
 ## Instale
 
-1. Faça o download de `arion-central-2.0.0-alpha.22.zip`.
+> **Quem usa a 1.3.3:** a 2.0 é outra extensão. Instale a 2.0, confira e depois remova a 1.3.3. Os cadastros da 1.3.3 não passam para a 2.0 (veja [Levar equipamentos e localizações](#levar-equipamentos-e-localizações)).
+
+1. Faça o download de `arion-central-2.0.0-alpha.23.zip`.
 2. Extraia em `C:\ARION\`.
 3. Abra `chrome://extensions` (Edge: `edge://extensions`). Ligue **Modo do desenvolvedor**.
 4. Clique em **Carregar sem compactação**. Selecione `C:\ARION\arion-central-alpha`.
@@ -70,6 +77,7 @@ No Firefox, o acesso ao OTRS e ao ServiceAide não vem ligado na instalação.
 | Restauração · Não Geográficos (Urbanos) | `Não Geográficos (Urbanos) - CLARO S.A. - RESTAURAÇÃO - INTERNET - PROJETO CARREFOUR - BL300000097058 - CI: 473084` |
 | Restauração · Bradesco | `BRAD - TELEFONICA BRASIL S.A. - RESTAURAÇÃO - INTERNET - BRADESCO - BD0001222 - BRAD: 791` |
 | Restauração · Projetos BB, CEF, Correios e FUST | `Projeto FUST - TELEFONICA BRASIL S.A. - RESTAURAÇÃO - INTERNET - PROJETO FUST - VIVO.BA.BLIVR000093 - INC10412506` |
+| Restauração · Projeto Algar | `Projeto EILD Algar - SP - RESTAURAÇÃO - INTERNET - PROJETO ALGAR - BL100000104483 - CI: 473084` (sem a operadora) |
 | Reincidência · Bradesco | `[REINCIDENCIA MONITORAMENTO] - TELMEX - BRADESCO - BD500000098988 - BRAD:2950` |
 | Cancelamento | `NGO - TELEFONICA BRASIL S.A. - CANCELAMENTO - INTERNET - OP:AN TELECOM - BD0001246 - NP:15576` |
 | **Cancelar Serviços · NGO** | `Não Geográficos (Urbanos) - LAVEZZO CORPORACOES COMERCIAIS LTDA - CANCELAMENTO - INTERNET - Pedido: 16003` |
@@ -168,12 +176,12 @@ A **engrenagem** ao lado de **Equipamento** abre a lista de equipamentos: Adicio
 3. Os alarmes tocam 4 h antes (Inspeção) e 1 h antes (Acompanhamento), mesmo com a Central fechada.
 4. Com o formulário aberto no ServiceAide, clique em **Colar**.
 
-### Painel NOC
+### Painel NOC (Início → ⋯ → Painel NOC)
 
 **Na TV (só no PC da TV)**
 
 1. Entre no OTRS nesse Chrome.
-2. Central → **Painel** → **Abrir na TV**. A Central abre o Painel das Filas do OTRS numa aba fixada e recarrega a cada 30 s.
+2. Clique em **Abrir na TV**. A Central abre o Painel das Filas do OTRS numa aba fixada e recarrega a cada 30 s.
 3. Aperte **F** para tela cheia. **T** troca o tema (escuro/claro). **C** abre os controles (intervalo, linha de tendência).
 
 - Cada caixa mostra o nome da fila, o número e a linha das últimas 2 horas.
@@ -182,23 +190,24 @@ A **engrenagem** ao lado de **Equipamento** abre a lista de equipamentos: Adicio
 
 ![Painel NOC](imagens/painel-noc-tv.png)
 
-**Passagem de turno**
-
-1. Escolha o analista (**Analistas** cadastra e remove, numa janela).
-2. **Ler agora** traz os números das 16 localidades.
-3. Adicione os chamados (Ticket# e título). Marque **Continuidade** e **Crítico** e escreva o status.
-4. **Copiar para o WhatsApp.** Os chamados ficam para a próxima passagem. Remova os fechados no ✕.
-
 **Tela de avisos (Canva) — TV do meio**
 
-1. Central → **Painel** → **Tela de avisos (Canva)**. Abre numa janela: leve para a TV do meio e aperte **F**.
+1. Clique em **Tela de avisos (Canva)**. Abre numa janela: leve para a TV do meio e aperte **F**.
 2. Aperte **C** e cole o link de incorporação do Canva (Compartilhar → Mais → Incorporar). O design precisa estar com "qualquer pessoa com o link pode ver".
 3. Escolha o **tempo por slide** (10, 20, 30 ou 60 s) e quando **recarregar** (a cada volta, 5, 15 ou 30 min).
 
-- A Central passa os slides sozinha e lê o total de slides do próprio Canva. Slide oculto no Canva fica de fora.
-- O próximo slide carrega por trás e entra com fade: sem tela branca.
+- A Central passa os slides sozinha. O próximo slide carrega por trás e entra com fade.
 - Faixa no rodapé com o Pool e a Central (pode ocultar). Setas ← → trocam o slide.
 - A Central só lê o Canva. Não altera nada no design.
+
+> **NOTA:** não entre no Canva pelo Chrome do PC das TVs. Com o Canva logado, ele recusa abrir dentro da Central ("a conexão foi recusada"). Para editar os avisos, use outro PC ou outro perfil do Chrome.
+
+### Passagem de turno (Início → ⋯ → Passagem de turno)
+
+1. Escolha o analista (**Analistas** cadastra e remove, numa janela).
+2. **Ler agora** traz os números das 16 localidades (grupo PASSAGEM DE TURNO do OTRS).
+3. Adicione os chamados (Ticket# e título). Marque **Continuidade** e **Crítico** e escreva o status.
+4. **Copiar para o WhatsApp.** Os chamados ficam para a próxima passagem. Remova os fechados no ✕.
 
 ### Trocar tema
 
@@ -208,7 +217,7 @@ Início → ⋯ → **Trocar tema** (último item do menu): Claro, Escuro, Areia
 
 ## Aviso de versão nova
 
-A Central lê o [`versao.json`](versao.json) desta branch a cada 6 horas e ao abrir o navegador.
+A Central lê o [`versao.json`](versao.json) da branch `main` a cada 6 horas e ao abrir o navegador.
 
 Se a versão do arquivo é maior que a instalada:
 
@@ -241,11 +250,12 @@ chrome.storage.local.get(['equips', 'locsUsadas'], ({ equips = [], locsUsadas = 
 
 Firefox: `about:debugging` → Este Firefox → ARION Central → **Inspecionar**.
 
-## Versões (alpha)
+## Versões
 
 | Versão | Mudanças |
 |---|---|
-| **2.0.0-alpha.22** | Painel NOC: nome das filas em destaque na TV. |
+| **2.0.0-alpha.23** | Painel NOC e Passagem de turno separados, no menu ⋯; máscara do Projeto Algar; aviso de versão lê a branch `main`. |
+| 2.0.0-alpha.22 | Painel NOC: nome das filas em destaque na TV. |
 | 2.0.0-alpha.21 | Tela de avisos sem tela branca entre os slides (próximo slide carrega por trás). |
 | 2.0.0-alpha.20 | Canva passa os slides sozinho (tempo por slide, a cada volta); 38 filas no Encaminhar; Arcos Dourados sem "- CNF" automático. |
 | 2.0.0-alpha.19 | Aba Encaminhar (qualquer fila); Tela de avisos (Canva); cadastros e configurações em janela; Trocar tema no fim do menu. |
@@ -260,15 +270,13 @@ Firefox: `about:debugging` → Este Firefox → ARION Central → **Inspecionar*
 | 2.0.0-alpha.10 | Firefox acha os scripts da página (caminho a partir da raiz). |
 | 2.0.0-alpha.9 | Copiar da Abertura de Chamados captura e copia. |
 | 2.0.0-alpha.8 | Texto do chamado no modelo da máscara. |
+| 1.3.3 | Última versão da linha 1.x (substituída pela 2.0). Arquivo no histórico do repositório. |
 
 ## Publique uma versão nova (responsável)
 
 1. Mude `version` e `version_name` no `manifest.json`.
-2. Gere o zip (com a pasta `arion-central-alpha` dentro) e envie para esta branch.
+2. Gere o zip (com a pasta `arion-central-alpha` dentro) e envie para a branch `main`.
 3. Mude `versao`, `nome`, `download` e `notas` no `versao.json`. Envie.
 
 **Resultado:** em até 6 horas, todos recebem o aviso.
 
----
-
-A documentação da versão estável (1.3.3) está na branch [`main`](https://github.com/ThiagoTasseli/central-servicos/tree/main).
