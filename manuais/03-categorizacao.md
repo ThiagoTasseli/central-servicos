@@ -38,6 +38,8 @@ A Central lê o título e o corpo do chamado. Ela preenche: **Modelo**, cliente,
 
 **Resultado:** a máscara aparece no quadro. Ela muda quando você muda um campo.
 
+![Aba Atacado com o chamado lido](../imagens/manuais/03-categorizacao-atacado.png)
+
 ### 2.2 Modelos e máscaras
 
 | Modelo | Exemplo de máscara |
@@ -93,6 +95,8 @@ A Central lê o título e o corpo do chamado. Ela preenche: **Modelo**, cliente,
 
 1. A Central lê do pedido: Razão social, Nome fantasia, Telefone, CNPJ, Contato, E-mail e produtos.
 2. Se o local é um POP, a Central avisa e não categoriza.
+
+![Cancelar Serviços · NGO](../imagens/manuais/03-categorizacao-cancelar-servicos.png)
 3. Confira o campo **Local**. Corrija se for preciso.
 4. Clique em **Categorizar**.
 5. Clique em **Encaminhar**.
@@ -154,6 +158,8 @@ A Central lê o título e o corpo do chamado. Ela preenche: **Modelo**, cliente,
 5. Em **Localidade**, digite parte do nome.
 6. Clique na localidade certa da lista.
 
+![Aba Comercial com o chamado capturado](../imagens/manuais/03-categorizacao-comercial.png)
+
 ### 4.2 Abra o chamado novo
 
 1. Clique em **Abrir chamado** (botão fixo no rodapé).
@@ -184,11 +190,15 @@ A Central lê o título e o corpo do chamado. Ela preenche: **Modelo**, cliente,
 3. Em **Fila**, digite parte do nome.
 4. Clique na fila certa da lista.
 
+![Busca da fila no Encaminhar](../imagens/manuais/03-categorizacao-encaminhar-busca.png)
+
 > **NOTA:** a lista tem as 38 filas do OTRS. Hífen e travessão contam como iguais. **Atualizar filas** lê a lista outra vez no chamado.
 
 5. Confira a **Nota de encaminhamento**. Edite se for preciso.
 6. Clique em **Encaminhar**.
 7. Clique em **Enviar nota** na janela.
+
+![Janela de confirmação do Encaminhar](../imagens/manuais/03-categorizacao-encaminhar-confirmar.png)
 
 **Resultado:** a Central envia a nota. O botão muda para **Mover para** e o nome da fila.
 

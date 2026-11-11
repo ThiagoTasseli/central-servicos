@@ -21,11 +21,15 @@
 2. Clique em **⋯**.
 3. Clique em **Passagem de turno**.
 
+![Tela da Passagem de turno](../imagens/manuais/08-turno.png)
+
 ## 2. Cadastre os analistas (só na primeira vez)
 
 1. Clique em **Analistas**.
 
 **Resultado:** a janela **Analistas** abre.
+
+![Janela Analistas](../imagens/manuais/08-turno-analistas.png)
 
 2. Digite o nome do analista.
 3. Clique em **Adicionar**.
@@ -66,6 +70,8 @@
 
 1. Leia o **Texto do WhatsApp**.
 2. Se for preciso, edite o texto.
+
+![Texto do WhatsApp](../imagens/manuais/08-turno-texto.png)
 
 > **NOTA:** **Refazer** desfaz as suas edições e faz o texto outra vez.
 

@@ -9,6 +9,8 @@
 
 **Resultado:** a Central abre no **Início**.
 
+![Início da Central](../imagens/manuais/01-inicio.png)
+
 ## 2. Use o Início
 
 O Início mostra:
@@ -39,6 +41,8 @@ A barra rápida fica no rodapé: **Início | Copiar · Abrir · Voos | Categoriz
 
 1. No Início, clique em **⋯** (canto superior direito).
 2. Clique na opção.
+
+![Menu ⋯ aberto](../imagens/manuais/01-menu.png)
 
 | Opção | Ação |
 |---|---|

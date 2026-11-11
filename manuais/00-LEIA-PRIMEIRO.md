@@ -32,6 +32,10 @@
 | **Máscara** | O texto padrão do chamado, pronto para copiar. |
 | **Chamado** | Um ticket no OTRS ou no ServiceAide. |
 
+## Sobre os prints
+
+Os prints usam dados de exemplo. Os nomes, números e chamados não são reais.
+
 ## Regras gerais
 
 - A Central não salva nada no OTRS nem no ServiceAide sem o seu clique.

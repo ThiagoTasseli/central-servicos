@@ -20,6 +20,8 @@ A tela tem 2 abas e uma janela:
 
 **Resultado:** a janela de ajustes abre.
 
+![Janela de ajustes da Inspeção de Voos](../imagens/manuais/05-voos-ajustes.png)
+
 3. Preencha **Atendente**, **Solicitante**, **Ramal de Inspeção**, **Ramal de Acompanhamento** e **E-mail**.
 4. Confira os campos de **ServiceAide — botão Colar** e de **Copiar informe**.
 5. Clique em **Salvar configurações**.
@@ -31,11 +33,15 @@ A tela tem 2 abas e uma janela:
 1. Arraste a planilha (`.xlsx`, `.xls` ou `.csv`) para a área de importação.
    Ou clique no ícone de importar e selecione o arquivo.
 
+![Área de importação da planilha](../imagens/manuais/05-voos-importar.png)
+
 **Resultado:** a lista de voos aparece.
 
 2. Em **Data da consulta**, escolha a data.
 
 **Resultado:** a lista mostra só os voos de **Partida Internacional** da data.
+
+![Lista de voos da data](../imagens/manuais/05-voos-lista.png)
 
 > **NOTA:** para trocar a planilha, clique em **Importar outra**.
 
@@ -85,6 +91,8 @@ Os alarmes tocam com a Central fechada.
 ## 7. Mude a antecedência dos alarmes
 
 1. Clique em **Alarmes**.
+
+![Aba Alarmes](../imagens/manuais/05-voos-alarmes.png)
 2. Em **Inspeção: minutos de antecedência**, digite o valor.
 3. Em **Acompanhamento: minutos de antecedência**, digite o valor.
 4. Clique em **Salvar padrão**.

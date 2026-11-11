@@ -11,6 +11,8 @@
 2. Abra a Central.
 3. Clique em **Abrir** na barra rápida.
 
+![Tela da Abertura de Chamados](../imagens/manuais/04-abertura.png)
+
 ## 2. Preencha o solicitante (1 · Solicitante)
 
 1. Em **Nome**, digite o nome do solicitante.
@@ -53,6 +55,8 @@
 1. Clique na engrenagem ao lado de **Equipamento**.
 
 **Resultado:** a janela **Equipamentos** abre.
+
+![Janela Equipamentos](../imagens/manuais/04-abertura-equipamentos.png)
 
 2. Para adicionar: digite o nome e clique em **Adicionar**.
 3. Para remover: clique em **✕** ao lado do nome.

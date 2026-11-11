@@ -34,6 +34,8 @@
 
 **Resultado:** a Tela de avisos abre numa janela nova.
 
+![Tela de avisos sem link](../imagens/manuais/07-avisos-configurar-vazio.png)
+
 4. Leve a janela para a TV do meio.
 5. Pressione **F**.
 
@@ -53,7 +55,11 @@
 6. Em **Faixa das filas no rodapé**, escolha **Mostrar** ou **Ocultar**.
 7. Clique em **Salvar**.
 
+![Controles da Tela de avisos preenchidos](../imagens/manuais/07-avisos-controles.png)
+
 **Resultado:** o 1º slide aparece. A Central passa os slides sozinha.
+
+![Slide do Canva na Tela de avisos (exemplo)](../imagens/manuais/07-avisos-slide.png)
 
 ## 4. Use as teclas
 

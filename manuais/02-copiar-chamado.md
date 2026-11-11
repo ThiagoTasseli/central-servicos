@@ -13,6 +13,8 @@
 
 **Resultado:** a janela de configurações abre.
 
+![Janela de configurações do Copiar Chamado](../imagens/manuais/02-copiar-config.png)
+
 4. Em **Nome do atendente (N1)**, digite o seu nome.
 5. Clique em **Salvar**.
 
@@ -24,6 +26,8 @@
 2. Na Central, clique em **Capturar chamado**.
 
 **Resultado:** a máscara aparece com Título, Chamado, Ramal, Solicitante, E-mail, Local, SLA e Descrição.
+
+![Máscara capturada](../imagens/manuais/02-copiar-mascara.png)
 
 > **NOTA:** se um campo está vazio, o campo não existe no chamado. Escreva o valor na máscara.
 

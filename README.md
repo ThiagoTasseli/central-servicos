@@ -14,7 +14,7 @@
 
 ## Manuais (passo a passo)
 
-Um manual para cada tela, em linguagem ASD-STE100: [`manuais/`](manuais/00-LEIA-PRIMEIRO.md).
+Um manual para cada tela, com prints, em linguagem ASD-STE100: [`manuais/`](manuais/00-LEIA-PRIMEIRO.md). Cada seção de **Como usar** abaixo tem o link do seu manual.
 
 | Tela | Manual |
 |---|---|
@@ -39,6 +39,8 @@ Um manual para cada tela, em linguagem ASD-STE100: [`manuais/`](manuais/00-LEIA-
 | ⋯ | **Passagem de turno** | Texto da passagem de turno para o WhatsApp. | OTRS |
 
 ### Barra rápida
+
+> 📘 **Passo a passo com prints:** [01 · Início, barra rápida e menu ⋯](manuais/01-inicio.md)
 
 Pílula de vidro no rodapé: **Início | Copiar · Abrir · Voos | Categorizar**.
 
@@ -72,6 +74,8 @@ No Firefox, o acesso ao OTRS e ao ServiceAide não vem ligado na instalação.
 
 ### Copiar Chamado
 
+> 📘 **Passo a passo com prints:** [02 · Copiar Chamado](manuais/02-copiar-chamado.md)
+
 1. Primeira vez: clique na engrenagem (abre uma janela). Digite seu nome de atendente. Clique em **Salvar**.
 2. Abra o chamado no ServiceAide.
 3. Clique em **Capturar chamado**.
@@ -79,6 +83,8 @@ No Firefox, o acesso ao OTRS e ao ServiceAide não vem ligado na instalação.
 5. Clique em **Copiar**. As edições vão junto. **Limpar** apaga a máscara.
 
 ### Categorização (OTRS)
+
+> 📘 **Passo a passo com prints:** [03 · Categorização](manuais/03-categorizacao.md)
 
 1. Abra o chamado no OTRS.
 2. Escolha **Atacado**, **Suporte TI** ou **Comercial**.
@@ -154,6 +160,8 @@ Título `SOLICITAÇÃO DE TRATATIVA DE QUALIDADE | OQ-… | TQ-… | Cliente | O
 
 **Encaminhar (qualquer fila)**
 
+> 📘 **Passo a passo com prints:** [03 · Categorização › Encaminhar](manuais/03-categorizacao.md#5-aba-encaminhar-qualquer-fila)
+
 1. Abra o chamado no OTRS (tela de detalhes). Clique na aba **Encaminhar**.
 2. Em **Fila**, digite parte do nome e escolha (as 38 filas do OTRS; hífen e travessão contam como iguais). **Atualizar filas** lê a lista de novo no chamado.
 3. Confira a **Nota de encaminhamento** (editável).
@@ -161,6 +169,8 @@ Título `SOLICITAÇÃO DE TRATATIVA DE QUALIDADE | OQ-… | TQ-… | Cliente | O
 5. Clique em **Mover para …** e confirme: o chamado vai para a fila. Não tem desfazer.
 
 **Comercial (teste)**
+
+> 📘 **Passo a passo com prints:** [03 · Categorização › Comercial](manuais/03-categorizacao.md#4-aba-comercial-teste)
 
 1. Abra o chamado no OTRS. Clique em **Capturar chamado**.
    - Chamado: número do ticket.
@@ -176,6 +186,8 @@ Título `SOLICITAÇÃO DE TRATATIVA DE QUALIDADE | OQ-… | TQ-… | Cliente | O
 
 ### Abertura de Chamados
 
+> 📘 **Passo a passo com prints:** [04 · Abertura de Chamados](manuais/04-abertura-de-chamados.md)
+
 1. Abra o formulário do chamado no ServiceAide.
 2. **1 · Solicitante:** digite o nome e clique em **Localizar**. O Telefone é opcional.
 3. **2 · Chamado:** Solicitação ou Incidente, Equipamento, Departamento, Localização e Problema.
@@ -186,12 +198,16 @@ A **engrenagem** ao lado de **Equipamento** abre a lista de equipamentos: Adicio
 
 ### Inspeção de Voos
 
+> 📘 **Passo a passo com prints:** [05 · Inspeção de Voos](manuais/05-inspecao-de-voos.md)
+
 1. Importe a planilha do dia (`.xlsx`, `.xls` ou `.csv`).
 2. Escolha a data. Aparecem só os voos de **Partida Internacional**.
 3. Os alarmes tocam 4 h antes (Inspeção) e 1 h antes (Acompanhamento), mesmo com a Central fechada.
 4. Com o formulário aberto no ServiceAide, clique em **Colar**.
 
 ### Painel NOC (Início → ⋯ → Painel NOC)
+
+> 📘 **Passo a passo com prints:** [06 · Painel NOC](manuais/06-painel-noc.md)
 
 **Na TV (só no PC da TV)**
 
@@ -207,6 +223,8 @@ A **engrenagem** ao lado de **Equipamento** abre a lista de equipamentos: Adicio
 
 **Tela de avisos (Canva) — TV do meio**
 
+> 📘 **Passo a passo com prints:** [07 · Tela de avisos (Canva)](manuais/07-tela-de-avisos.md)
+
 1. Clique em **Tela de avisos (Canva)**. Abre numa janela: leve para a TV do meio e aperte **F**.
 2. Aperte **C** e cole o link de incorporação do Canva (Compartilhar → Mais → Incorporar). O design precisa estar com "qualquer pessoa com o link pode ver".
 3. Escolha o **tempo por slide** (10, 20, 30 ou 60 s) e quando **recarregar** (a cada volta, 5, 15 ou 30 min).
@@ -219,6 +237,8 @@ A **engrenagem** ao lado de **Equipamento** abre a lista de equipamentos: Adicio
 
 ### Passagem de turno (Início → ⋯ → Passagem de turno)
 
+> 📘 **Passo a passo com prints:** [08 · Passagem de turno](manuais/08-passagem-de-turno.md)
+
 1. Escolha o analista (**Analistas** cadastra e remove, numa janela).
 2. **Ler agora** traz os números das 16 localidades (grupo PASSAGEM DE TURNO do OTRS).
 3. Adicione os chamados (Ticket# e título). Marque **Continuidade** e **Crítico** e escreva o status.
@@ -226,11 +246,15 @@ A **engrenagem** ao lado de **Equipamento** abre a lista de equipamentos: Adicio
 
 ### Trocar tema
 
+> 📘 **Passo a passo com prints:** [01 · Início › Troque o tema](manuais/01-inicio.md#5-troque-o-tema)
+
 Início → ⋯ → **Trocar tema** (último item do menu): Claro, Escuro, Areia, Noite ou Alto contraste. Passe o mouse para ver. Clique para aplicar.
 
 ![Temas](imagens/alpha-temas.png)
 
 ## Aviso de versão nova
+
+> 📘 **Passo a passo com prints:** [01 · Início › Atualize a Central](manuais/01-inicio.md#6-atualize-a-central)
 
 A Central lê o [`versao.json`](versao.json) da branch `main` a cada 6 horas e ao abrir o navegador.
 

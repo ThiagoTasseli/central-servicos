@@ -23,6 +23,8 @@ A tela mostra:
 - o estado da leitura (bolinha verde: lido agora; vermelha: leitura antiga);
 - **Abrir na TV**, **Ler agora** e **Tela de avisos (Canva)**.
 
+![Tela do Painel NOC na Central](../imagens/manuais/06-painel-central.png)
+
 1. Clique em **Ler agora** para atualizar os números.
 
 **Resultado:** a Central abre o Painel das Filas por trás, lê os números e fecha a aba.
@@ -47,6 +49,8 @@ A tela mostra:
 
 **Resultado:** a Tela da TV fica em tela cheia.
 
+![Tela da TV, tema escuro](../imagens/manuais/06-tv-escuro.png)
+
 > **ATENÇÃO:** não feche a aba fixada do OTRS. Sem ela, a Tela da TV para de atualizar.
 
 ## 3. Leia a Tela da TV
@@ -70,12 +74,18 @@ A tela mostra:
 | **C** | Abre os controles. |
 | **Esc** | Fecha os controles. |
 
+Tema claro (tecla **T**):
+
+![Tela da TV, tema claro](../imagens/manuais/06-tv-claro.png)
+
 ## 5. Use os controles
 
 1. Pressione **C**.
    Ou clique no ícone de controles no topo da Tela da TV.
 
 **Resultado:** a janela **Controles** abre.
+
+![Controles da Tela da TV](../imagens/manuais/06-tv-controles.png)
 
 2. Escolha o **Tema**: Escuro ou Claro.
 3. Escolha **Atualizar o OTRS a cada**: 15 s, 30 s ou 60 s.
