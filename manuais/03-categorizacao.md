@@ -245,3 +245,37 @@ A Central lê o título e o corpo do chamado. Ela preenche: **Modelo**, cliente,
 > **NOTA:** a Central guarda as buscas no navegador: chamados por 30 min, links e operadoras por 24 h. **Limpar cache** apaga.
 
 > **ATENÇÃO:** senha e PPPoE nunca aparecem e nunca são salvos.
+
+## 7. Aba Aeroportos
+
+**Objetivo:** categorizar um incidente de aeroporto e encaminhar para a fila que você escolher.
+
+1. Clique na aba **Aero**.
+
+**Resultado:** a Central lê o título e acha o aeroporto.
+
+   - Se o aeroporto é POP (GRU, GIG, BSB, CNF, VCP, FLN, MEA, VIX, POA, FOR, CGH, CWB, CGB, NAT), a Localidade e o Site são do POP. Aparece **✓ GRU é POP**.
+   - Se não é POP, a Localidade é **Não Geográficos (Aeroportos)** e o Site é **NGO - NAO GEOGRAFICO**. Aparece **Sem POP: Não Geográfico**.
+
+![Aba Aeroportos](../imagens/manuais/03-categorizacao-aeroportos.png)
+
+2. Confira a **Localidade**. Se estiver errada, escolha outra na lista.
+3. Empresa e Designação são opcionais. A designação (BL…) vem do chamado, se existir.
+4. Em **Fila de destino**, digite e escolha a fila.
+5. Confira o **Título e Assunto**. É o título que veio no chamado.
+6. Clique em **1 Categorizar**.
+
+**Resultado:** a Central preenche os campos do Atacado: Restauração · INTERNET · Indisponibilidade · Internet · 24 Horas 24x7. O texto informa a fila escolhida.
+
+7. Clique em **2 Encaminhar**.
+
+**Resultado:** a Central envia a nota de encaminhamento. O botão muda para **Mover para a fila**.
+
+8. Clique em **Mover para a fila**. Confirme.
+
+**Resultado:** o chamado vai para a fila. O botão mostra **✓ Encaminhado**.
+
+> **Atenção:** o Mover não tem desfazer.
+
+- **Enviar automaticamente** é o mesmo do Atacado.
+- **Reiniciar chamado** lê o chamado de novo e limpa a fila.

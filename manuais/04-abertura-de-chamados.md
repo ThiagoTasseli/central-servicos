@@ -28,6 +28,10 @@
 2. Escolha o **Equipamento**.
 3. Escolha o **Departamento**.
 4. Escolha ou digite a **Localização**.
+   Depois do Departamento, a Localização mostra o mesmo texto em cinza.
+   Para aceitar, pressione **TAB** ou **→**. Continue a escrever depois do texto.
+
+   ![Localização sugere o Departamento](../imagens/manuais/04-abertura-localizacao-sugestao.png)
 5. Escreva o **Problema**.
 6. Para Detalhes, Matrícula e Identificação, clique em **Mais campos**.
 
